@@ -1,0 +1,3144 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      BỔ SUNG TÀI KHOẢN VIETCOMBANK TRƯỜNG ĐH NGOẠI THƯƠNG (FTU) 2026 - 2027
+    </title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=Montserrat:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=Roboto:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --gf-bg: #f0ebf8;
+        --gf-purple: #5336d6;
+        --gf-purple-hover: #462bb8;
+        --gf-border: #dadce0;
+        --gf-text: #202124;
+        --gf-subtext: #5f6368;
+        --gf-red: #d93025;
+        --gf-blue: #1a73e8;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body,
+      html {
+        width: 100%;
+        min-height: 100vh;
+        min-height: 100dvh;
+        overflow-x: hidden;
+        font-family: "Roboto", Arial, sans-serif;
+        background-color: var(--gf-bg);
+        color: var(--gf-text);
+        -webkit-tap-highlight-color: transparent;
+        -webkit-text-size-adjust: 100%;
+      }
+
+      /* Google Forms Custom Input Underline Animation */
+      .gf-input-wrap {
+        position: relative;
+        width: 100%;
+        max-width: 295px;
+      }
+      .gf-input-wrap.full-line {
+        max-width: 100%;
+        flex: 1;
+      }
+      .gf-input {
+        width: 100%;
+        border: none;
+        border-bottom: 1px solid #dadce0;
+        padding: 6px 0;
+        font-size: 14px;
+        color: #202124;
+        background: transparent;
+        outline: none;
+        border-radius: 0;
+        transition: border-color 0.2s;
+      }
+      .gf-input::placeholder {
+        color: #70757a;
+        font-weight: 400;
+      }
+      .gf-input-underline {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        width: 0;
+        height: 2px;
+        background-color: var(--gf-purple);
+        transition:
+          width 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+          left 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      .gf-input:focus ~ .gf-input-underline {
+        width: 100%;
+        left: 0;
+      }
+
+      .gf-card {
+        background: #ffffff;
+        border: 1px solid var(--gf-border);
+        border-radius: 8px;
+        padding: 24px;
+        margin-bottom: 12px;
+        position: relative;
+        transition:
+          box-shadow 0.2s,
+          border-color 0.2s;
+      }
+      .gf-card.error-card {
+        border-color: var(--gf-red);
+      }
+
+      .gf-radio-label {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        font-size: 14px;
+        color: #202124;
+        user-select: none;
+        padding: 6px 0;
+        min-height: 36px;
+      }
+      .gf-radio-input {
+        display: none;
+      }
+      .gf-radio-circle {
+        width: 20px;
+        height: 20px;
+        border: 2px solid #5f6368;
+        border-radius: 50%;
+        margin-right: 12px;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: border-color 0.2s;
+        flex-shrink: 0;
+      }
+      .gf-radio-circle::after {
+        content: "";
+        width: 10px;
+        height: 10px;
+        background-color: var(--gf-purple);
+        border-radius: 50%;
+        transform: scale(0);
+        transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      .gf-radio-input:checked + .gf-radio-circle {
+        border-color: var(--gf-purple);
+      }
+      .gf-radio-input:checked + .gf-radio-circle::after {
+        transform: scale(1);
+      }
+
+      #black-fade-overlay {
+        position: fixed;
+        inset: 0;
+        background: #000000;
+        opacity: 0;
+        pointer-events: none;
+        z-index: 9999;
+        will-change: opacity;
+      }
+
+      #sky-transition-stage {
+        position: fixed;
+        inset: 0;
+        width: 100vw;
+        height: 100vh;
+        height: 100dvh;
+        z-index: 5000;
+        display: none;
+        overflow: hidden;
+        background: linear-gradient(
+          180deg,
+          #0f2952 0%,
+          #2b6cb0 42%,
+          #76a9fa 78%,
+          #e2f1ff 100%
+        );
+      }
+
+      #part2-stage {
+        position: relative;
+        width: 100%;
+        min-height: 100vh;
+        min-height: 100dvh;
+        display: none;
+        overflow-x: hidden;
+        background: radial-gradient(
+          circle at 50% 30%,
+          #2a0306 0%,
+          #0d0204 65%,
+          #050102 100%
+        );
+        font-family: "Montserrat", "Be Vietnam Pro", sans-serif;
+      }
+
+      /* Royal Stage Side Velvet Curtains */
+      .royal-curtain-left,
+      .royal-curtain-right {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        width: 14vw;
+        max-width: 220px;
+        pointer-events: none;
+        z-index: 15;
+        background: repeating-linear-gradient(
+          90deg,
+          #4a0206 0px,
+          #7c060c 22px,
+          #380104 44px,
+          #680409 66px
+        );
+        box-shadow: 0 0 50px rgba(0, 0, 0, 0.85);
+        opacity: 0.75;
+      }
+      .royal-curtain-left {
+        left: 0;
+        border-right: 2px solid rgba(251, 191, 36, 0.35);
+        mask-image: linear-gradient(
+          to right,
+          rgba(0, 0, 0, 1) 45%,
+          rgba(0, 0, 0, 0) 100%
+        );
+        -webkit-mask-image: linear-gradient(
+          to right,
+          rgba(0, 0, 0, 1) 45%,
+          rgba(0, 0, 0, 0) 100%
+        );
+      }
+      .royal-curtain-right {
+        right: 0;
+        border-left: 2px solid rgba(251, 191, 36, 0.35);
+        mask-image: linear-gradient(
+          to left,
+          rgba(0, 0, 0, 1) 45%,
+          rgba(0, 0, 0, 0) 100%
+        );
+        -webkit-mask-image: linear-gradient(
+          to left,
+          rgba(0, 0, 0, 1) 45%,
+          rgba(0, 0, 0, 0) 100%
+        );
+      }
+
+      @keyframes swayPendulum {
+        0%,
+        100% {
+          transform: rotate(-3deg);
+        }
+        50% {
+          transform: rotate(3deg);
+        }
+      }
+      .swaying-ornament {
+        transform-origin: top center;
+        animation: swayPendulum 5s ease-in-out infinite;
+      }
+
+      /* Main Crimson Curtain Card Container (Exact match to Image 3) */
+      .invitation-main-frame {
+        position: relative;
+        width: 100%;
+        max-width: 480px;
+        overflow: hidden;
+        background:
+          radial-gradient(
+            circle at 50% 18%,
+            rgba(220, 20, 30, 0.45) 0%,
+            rgba(90, 3, 8, 0) 65%
+          ),
+          repeating-linear-gradient(
+            90deg,
+            #6b0308 0%,
+            #8f070d 8%,
+            #5c0206 16%,
+            #87060c 24%,
+            #630307 32%,
+            #96080f 40%,
+            #5a0206 50%,
+            #8e070d 60%,
+            #610307 70%,
+            #8c060c 80%,
+            #580205 90%,
+            #7a0409 100%
+          );
+        border: 1px solid rgba(245, 208, 125, 0.32);
+        box-shadow:
+          0 25px 70px rgba(0, 0, 0, 0.9),
+          0 0 45px rgba(165, 12, 20, 0.4),
+          inset 0 0 35px rgba(0, 0, 0, 0.45);
+        will-change: transform, opacity;
+      }
+
+      /* Metallic Gold "THIỆP MỜI" Serif Heading */
+      .title-thiep-moi {
+        font-family: "Cormorant Garamond", "Playfair Display", Georgia, serif;
+        font-weight: 700;
+        line-height: 1.02;
+        letter-spacing: 0.015em;
+        background: linear-gradient(
+          180deg,
+          #fff8d6 0%,
+          #f5d680 32%,
+          #cda03d 65%,
+          #fbe79c 100%
+        );
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        color: #f5d680;
+        filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.6));
+      }
+
+      /* Metallic Gold Banner Box */
+      .gold-banner-box {
+        background: linear-gradient(
+          90deg,
+          #d8b560 0%,
+          #f6e299 28%,
+          #dfc06c 52%,
+          #f8e6a2 76%,
+          #d2ae56 100%
+        );
+        border-radius: 3px;
+        border: 1px solid #fae8a8;
+        box-shadow:
+          0 8px 20px rgba(0, 0, 0, 0.45),
+          inset 0 1px 2px rgba(255, 255, 255, 0.8);
+        will-change: transform, opacity;
+      }
+
+      /* Cream White Inner Letter Paper Card */
+      .letter-paper {
+        position: relative;
+        z-index: 15;
+        background: linear-gradient(
+          180deg,
+          #fffefb 0%,
+          #fdfaf2 68%,
+          #f4ecde 100%
+        );
+        border-radius: 4px 4px 0 0;
+        box-shadow:
+          0 -4px 24px rgba(0, 0, 0, 0.38),
+          0 0 0 1px rgba(218, 182, 112, 0.45);
+        will-change: transform, opacity;
+      }
+
+      /* Crisp, Sharp Guest Name Styling */
+      .guest-name-sharp {
+        font-family: "Be Vietnam Pro", "Roboto", sans-serif;
+        font-weight: 700;
+        color: #141414;
+        letter-spacing: -0.01em;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        text-rendering: optimizeLegibility;
+        word-break: break-word;
+        overflow-wrap: anywhere;
+      }
+
+      /* Red Linen Envelope Pocket at Bottom */
+      .envelope-pocket-wrap {
+        position: relative;
+        width: 100%;
+        height: 215px;
+        margin-top: -120px;
+        z-index: 25;
+        pointer-events: none;
+        will-change: transform, opacity;
+      }
+
+      @keyframes sealPulse {
+        0%,
+        100% {
+          filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.65)) brightness(1);
+        }
+        50% {
+          filter: drop-shadow(0 6px 16px rgba(251, 191, 36, 0.45))
+            brightness(1.06);
+        }
+      }
+      .wax-seal-glow {
+        animation: sealPulse 3.5s ease-in-out infinite;
+      }
+
+      @media (max-width: 640px) {
+        .royal-curtain-left,
+        .royal-curtain-right {
+          display: none;
+        }
+        /* Prevent iOS/Android auto-zoom when focusing inputs on mobile */
+        .gf-input {
+          font-size: 16px;
+          padding: 8px 0;
+        }
+        .gf-input-wrap {
+          max-width: 100%;
+        }
+        .gf-card {
+          padding: 18px 16px;
+        }
+        .gf-radio-label {
+          min-height: 42px;
+          font-size: 15px;
+        }
+        .envelope-pocket-wrap {
+          height: 180px;
+          margin-top: -100px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main
+      id="part1-form-view"
+      class="min-h-screen w-full pt-3 pb-16 px-3 sm:px-4 flex flex-col items-center relative"
+    >
+      <div class="w-full max-w-[640px]">
+        <!-- Card 1: Form Header -->
+        <div class="gf-card !p-0 overflow-hidden">
+          <!-- Top Purple Accent Strip -->
+          <div class="h-[10px] w-full bg-[#5336d6]"></div>
+
+          <div class="p-6 pb-4">
+            <h1
+              class="text-[24px] sm:text-[32px] leading-[1.35] font-normal text-[#202124] mb-3"
+            >
+              BỔ SUNG TÀI KHOẢN VIETCOMBANK TRƯỜNG ĐH NGOẠI THƯƠNG (FTU) 2026 -
+              2027
+            </h1>
+            <p class="text-[14px] leading-[1.45] text-[#202124]">
+              Thực hiện bổ sung số tài khoản VCB cho sinh viên trong danh sách
+              cập nhật bổ sung năm 2026 - 2027
+            </p>
+          </div>
+
+          <hr class="border-t border-[#dadce0]" />
+
+          <!-- Account Info Row (Removed email & switch account link) -->
+          <div class="px-6 py-3 flex items-center justify-between gap-2">
+            <!-- Not shared badge -->
+            <div class="flex items-center gap-2.5 text-[14px] text-[#5f6368]">
+              <svg
+                class="w-[18px] h-[18px] text-[#5f6368] shrink-0"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h9v-2H4V8l8 5 8-5v5h2V6c0-1.1-.9-2-2-2zm-8 7L4 6h16l-8 5zm7 4c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4zm1.85 5.15l-.7.7L19 19.7l-1.15 1.15-.7-.7L18.3 19l-1.15-1.15.7-.7L19 18.3l1.15-1.15.7.7L19.7 19l1.15 1.15z"
+                />
+              </svg>
+              <span>Không được chia sẻ</span>
+            </div>
+
+            <!-- Cloud Check Icon -->
+            <div class="text-[#5f6368]" title="Đã lưu bản nháp">
+              <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM19 18H6c-2.21 0-4-1.79-4-4 0-2.05 1.53-3.76 3.56-3.97l1.07-.11.5-.95C8.08 7.14 9.94 6 12 6c2.62 0 4.88 1.86 5.39 4.43l.3 1.5 1.53.11c1.56.1 2.78 1.41 2.78 2.96 0 1.65-1.35 3-3 3zm-8.59-2.41L15.17 10.83l-1.41-1.41-3.35 3.35-1.59-1.59-1.41 1.41 3 3z"
+                />
+              </svg>
+            </div>
+          </div>
+
+          <hr class="border-t border-[#dadce0]" />
+
+          <!-- Required note -->
+          <div class="px-6 py-3.5 text-[14px] text-[#d93025]">
+            * Biểu thị câu hỏi bắt buộc
+          </div>
+        </div>
+
+        <form id="ftu-survey-form" novalidate>
+          <!-- Card 2: Họ và Tên -->
+          <div class="gf-card" id="card-fullname">
+            <label
+              for="input-fullname"
+              class="block text-[16px] text-[#202124] mb-6 leading-[1.5]"
+            >
+              Họ và Tên <span class="text-[#d93025]">*</span>
+            </label>
+            <div class="gf-input-wrap">
+              <input
+                type="text"
+                id="input-fullname"
+                class="gf-input"
+                placeholder="Câu trả lời của bạn"
+                autocomplete="off"
+              />
+              <div class="gf-input-underline"></div>
+            </div>
+          </div>
+
+          <!-- Card 3: Ngân hàng thực hiện xác minh -->
+          <div class="gf-card" id="card-bank">
+            <div class="text-[16px] text-[#202124] mb-4 leading-[1.5]">
+              Ngân hàng thực hiện xác minh (nếu đã có Tài khoản VCB do trường
+              cấp trước đó hãy chọn VCB)
+              <span class="text-[#d93025] ml-1">*</span>
+            </div>
+
+            <div class="flex flex-col gap-2.5 mt-2">
+              <!-- Option 1: Vietcombank -->
+              <label class="gf-radio-label">
+                <input
+                  type="radio"
+                  name="bank_choice"
+                  value="Vietcombank"
+                  class="gf-radio-input"
+                  id="radio-vcb"
+                />
+                <span class="gf-radio-circle"></span>
+                <span>Vietcombank</span>
+              </label>
+
+              <!-- Option 2: Mục khác -->
+              <div class="flex items-center gap-3 w-full">
+                <label class="gf-radio-label shrink-0">
+                  <input
+                    type="radio"
+                    name="bank_choice"
+                    value="Other"
+                    class="gf-radio-input"
+                    id="radio-other"
+                  />
+                  <span class="gf-radio-circle"></span>
+                  <span>Mục khác:</span>
+                </label>
+                <div class="gf-input-wrap full-line">
+                  <input
+                    type="text"
+                    id="input-other-bank"
+                    class="gf-input"
+                    aria-label="Mục khác"
+                  />
+                  <div class="gf-input-underline"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 4: Số tài khoản ngân hàng VCB -->
+          <div class="gf-card" id="card-account">
+            <label
+              for="input-account"
+              class="block text-[16px] text-[#202124] mb-6 leading-[1.5]"
+            >
+              Số tài khoản ngân hàng VCB <span class="text-[#d93025]">*</span>
+            </label>
+            <div class="gf-input-wrap">
+              <input
+                type="text"
+                id="input-account"
+                class="gf-input"
+                placeholder="Câu trả lời của bạn"
+                inputmode="text"
+                autocomplete="off"
+              />
+              <div class="gf-input-underline"></div>
+            </div>
+          </div>
+
+          <div class="flex items-center justify-between mt-3 mb-4">
+            <button
+              type="submit"
+              id="btn-submit-form"
+              class="bg-[#5336d6] hover:bg-[#462bb8] active:bg-[#3b239c] active:scale-[0.98] text-white font-medium text-[14px] sm:text-[14px] px-7 py-2.5 sm:px-6 sm:py-2 rounded-[4px] shadow-sm transition-all cursor-pointer select-none"
+            >
+              Gửi
+            </button>
+
+            <button
+              type="button"
+              id="btn-clear-form"
+              class="text-[#5336d6] hover:bg-[#5336d6]/5 active:bg-[#5336d6]/10 font-medium text-[14px] px-3 py-2.5 rounded-[4px] transition-colors cursor-pointer"
+            >
+              Xóa hết câu trả lời
+            </button>
+          </div>
+        </form>
+
+        <!-- Footer Disclaimers (Exact match to Image 2) -->
+        <div class="text-[12px] text-[#5f6368] mt-2 space-y-4">
+          <p>Không bao giờ gửi mật khẩu thông qua Google Biểu mẫu.</p>
+
+          <p class="text-center leading-relaxed px-2">
+            Nội dung này không phải do Google tạo ra hay xác nhận. -
+            <a href="javascript:void(0)" class="underline hover:text-[#202124]"
+              >Liên hệ với chủ sở hữu biểu mẫu</a
+            >
+            -
+            <a href="javascript:void(0)" class="underline hover:text-[#202124]"
+              >Điều khoản Dịch vụ</a
+            >
+            -
+            <a href="javascript:void(0)" class="underline hover:text-[#202124]"
+              >Chính sách quyền riêng tư</a
+            >
+          </p>
+
+          <p class="text-center">
+            Biểu mẫu này có vẻ đáng ngờ không?
+            <a href="javascript:void(0)" class="underline hover:text-[#202124]"
+              >Báo cáo</a
+            >
+          </p>
+
+          <div
+            class="flex items-center justify-center gap-1.5 pt-2 pb-6 opacity-80"
+          >
+            <span
+              class="text-[22px] font-medium tracking-tight text-[#5f6368]"
+              style="
+                font-family:
+                  &quot;Product Sans&quot;, &quot;Roboto&quot;, sans-serif;
+              "
+              >Google</span
+            >
+            <span class="text-[22px] font-normal text-[#5f6368]">Biểu mẫu</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Left Help Icon & Bottom Right Edit Floating Button (Exact match to Image 1 & 2) -->
+      <button
+        type="button"
+        aria-label="Trợ giúp"
+        class="fixed bottom-4 left-4 w-7 h-7 rounded-full flex items-center justify-center text-[#5f6368] hover:bg-black/5 transition"
+      >
+        <svg
+          class="w-5 h-5"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.8"
+        >
+          <circle cx="12" cy="12" r="10"></circle>
+          <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+          <line x1="12" y1="17" x2="12.01" y2="17"></line>
+        </svg>
+      </button>
+
+      <button
+        type="button"
+        aria-label="Chỉnh sửa biểu mẫu"
+        class="fixed bottom-6 right-6 w-14 h-14 rounded-full bg-white shadow-[0_2px_10px_rgba(0,0,0,0.18)] flex items-center justify-center text-[#5336d6] hover:shadow-[0_4px_14px_rgba(0,0,0,0.24)] transition"
+      >
+        <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
+          <path
+            d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34a.9959.9959 0 0 0-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"
+          />
+        </svg>
+      </button>
+    </main>
+
+    <!-- 1s Darken + 1s Brighten Overlay -->
+    <div id="black-fade-overlay"></div>
+
+    <!-- 60Hz Sky, Dense Moving Clouds, Flying Messenger Bird & Falling Letter Stage -->
+    <section id="sky-transition-stage" aria-label="Chuyển cảnh chim đưa thư">
+      <canvas id="sky-canvas" class="w-full h-full block"></canvas>
+    </section>
+
+    <section id="part2-stage">
+      <!-- Background Fireworks Canvas (60Hz Dual-side continuous launcher) -->
+      <canvas
+        id="fireworks-canvas"
+        class="fixed inset-0 w-full h-full pointer-events-none z-10"
+      ></canvas>
+
+      <!-- Foreground Falling Flowers & Golden Ribbons Canvas (60Hz continuous) -->
+      <canvas
+        id="petals-canvas"
+        class="fixed inset-0 w-full h-full pointer-events-none z-40"
+      ></canvas>
+
+      <!-- Magnificent Royal Stage Side Curtains & Chandeliers (Decorating outer space) -->
+      <div class="royal-curtain-left"></div>
+      <div class="royal-curtain-right"></div>
+
+      <!-- Top Left & Right Hanging Golden Palace Lanterns / Chandeliers -->
+      <div
+        class="fixed top-0 left-[6%] z-20 hidden lg:flex flex-col items-center pointer-events-none swaying-ornament"
+      >
+        <div
+          class="w-0.5 h-16 bg-gradient-to-b from-amber-200 to-amber-500"
+        ></div>
+        <svg
+          class="w-20 h-24 text-amber-300 drop-shadow-[0_0_20px_rgba(251,191,36,0.8)]"
+          viewBox="0 0 100 120"
+          fill="none"
+        >
+          <path
+            d="M50 0 L50 15 M30 25 Q50 10 70 25 L80 65 Q50 85 20 65 Z"
+            stroke="url(#goldGrad)"
+            stroke-width="3"
+            fill="rgba(251,191,36,0.18)"
+          />
+          <circle cx="50" cy="48" r="12" fill="#fff7d6" opacity="0.9" />
+          <path
+            d="M35 72 L35 95 M50 76 L50 108 M65 72 L65 95"
+            stroke="#fcd34d"
+            stroke-width="2.5"
+            stroke-linecap="round"
+          />
+          <defs>
+            <linearGradient id="goldGrad" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#fef08a" />
+              <stop offset="50%" stop-color="#f59e0b" />
+              <stop offset="100%" stop-color="#fef08a" />
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
+
+      <div
+        class="fixed top-0 right-[6%] z-20 hidden lg:flex flex-col items-center pointer-events-none swaying-ornament"
+        style="animation-delay: -2.5s"
+      >
+        <div
+          class="w-0.5 h-16 bg-gradient-to-b from-amber-200 to-amber-500"
+        ></div>
+        <svg
+          class="w-20 h-24 text-amber-300 drop-shadow-[0_0_20px_rgba(251,191,36,0.8)]"
+          viewBox="0 0 100 120"
+          fill="none"
+        >
+          <path
+            d="M50 0 L50 15 M30 25 Q50 10 70 25 L80 65 Q50 85 20 65 Z"
+            stroke="url(#goldGrad)"
+            stroke-width="3"
+            fill="rgba(251,191,36,0.18)"
+          />
+          <circle cx="50" cy="48" r="12" fill="#fff7d6" opacity="0.9" />
+          <path
+            d="M35 72 L35 95 M50 76 L50 108 M65 72 L65 95"
+            stroke="#fcd34d"
+            stroke-width="2.5"
+            stroke-linecap="round"
+          />
+        </svg>
+      </div>
+
+      <div
+        class="relative z-30 min-h-screen w-full flex flex-col items-center justify-center py-6 px-2 sm:px-4"
+      >
+        <!-- Ornate Top Royal Crest above Card -->
+        <div class="mb-2 flex items-center gap-3 text-amber-300/90 select-none">
+          <span
+            class="h-[1px] w-12 sm:w-24 bg-gradient-to-r from-transparent to-amber-400"
+          ></span>
+          <span
+            class="text-xs sm:text-sm uppercase tracking-[0.25em] font-semibold text-amber-200 drop-shadow"
+          >
+            ✦ Royal Invitation • 20/10 ✦
+          </span>
+          <span
+            class="h-[1px] w-12 sm:w-24 bg-gradient-to-l from-transparent to-amber-400"
+          ></span>
+        </div>
+
+        <!-- THE INVITATION CARD CONTAINER (Exact Replica of Image 3) -->
+        <div
+          id="invitation-card-box"
+          class="invitation-main-frame rounded-md flex flex-col items-center pt-10 sm:pt-12"
+        >
+          <!-- Decorative Static & Animated Metallic Gold Ribbons inside the Card Header (matching Image 3) -->
+          <svg
+            class="absolute top-2 right-2 w-24 h-36 pointer-events-none z-20 opacity-95"
+            viewBox="0 0 100 150"
+            fill="none"
+          >
+            <path
+              d="M75 5 C95 25, 45 45, 70 70 C90 90, 40 105, 55 125"
+              stroke="url(#ribbonGold)"
+              stroke-width="8"
+              stroke-linecap="round"
+            />
+            <path
+              d="M75 5 C95 25, 45 45, 70 70"
+              stroke="#fff6c5"
+              stroke-width="2"
+              stroke-linecap="round"
+            />
+            <rect
+              x="82"
+              y="102"
+              width="12"
+              height="4"
+              transform="rotate(32 82 102)"
+              fill="url(#ribbonGold)"
+            />
+            <rect
+              x="48"
+              y="138"
+              width="10"
+              height="3.5"
+              transform="rotate(12 48 138)"
+              fill="url(#ribbonGold)"
+            />
+            <defs>
+              <linearGradient id="ribbonGold" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#b78327" />
+                <stop offset="35%" stop-color="#fbe499" />
+                <stop offset="65%" stop-color="#d29d39" />
+                <stop offset="100%" stop-color="#fff1be" />
+              </linearGradient>
+            </defs>
+          </svg>
+
+          <!-- Left Golden Confetti & Ribbon Curl (matching Image 3) -->
+          <svg
+            class="absolute top-2 left-0 w-24 h-64 pointer-events-none z-20 opacity-95"
+            viewBox="0 0 100 240"
+            fill="none"
+          >
+            <rect
+              x="28"
+              y="6"
+              width="10"
+              height="4"
+              transform="rotate(25 28 6)"
+              fill="url(#ribbonGold)"
+            />
+            <path d="M0 32 Q12 28 8 42 Q2 48 0 44" fill="url(#ribbonGold)" />
+            <rect
+              x="34"
+              y="75"
+              width="14"
+              height="4.5"
+              transform="rotate(28 34 75)"
+              fill="url(#ribbonGold)"
+            />
+            <!-- Soft 3D Gold Ribbon Petal on Left Edge -->
+            <path
+              d="M-5 155 C15 162, 35 150, 38 168 C40 185, 12 192, -5 182 Z"
+              fill="url(#softBronzeGrad)"
+              opacity="0.88"
+            />
+            <defs>
+              <linearGradient id="softBronzeGrad" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#8d5228" />
+                <stop offset="50%" stop-color="#e5b887" />
+                <stop offset="100%" stop-color="#7c421c" />
+              </linearGradient>
+            </defs>
+          </svg>
+
+          <!-- Header: THIỆP MỜI -->
+          <div
+            id="inv-header-title"
+            class="reveal-section relative z-20 text-center px-4 w-full"
+          >
+            <h2 class="title-thiep-moi text-[54px] sm:text-[68px] select-none">
+              THIỆP MỜI
+            </h2>
+          </div>
+
+          <!-- Golden Banner: THAM DỰ “ĐẠI TIỆC MỲ CAY” CHÚC MỪNG 20/10 -->
+          <div
+            id="inv-gold-banner"
+            class="reveal-section relative z-20 w-[86%] sm:w-[82%] mt-2 mb-5 gold-banner-box py-4 sm:py-5 px-3 text-center"
+          >
+            <p
+              class="text-[#8c070d] font-extrabold text-[13.5px] sm:text-[15.5px] tracking-tight leading-snug"
+            >
+              THAM DỰ “ĐẠI TIỆC MỲ CAY” CHÚC MỪNG 20/10
+            </p>
+          </div>
+
+          <!-- White/Cream Letter Card that slides out of the envelope -->
+          <div
+            id="letter-paper-card"
+            class="letter-paper w-[86%] sm:w-[82%] px-5 sm:px-8 pt-7 pb-32 text-[#222222]"
+          >
+            <!-- Row 1: KÍNH MỜI QUÝ CÔ + [Họ và tên] -->
+            <div
+              class="reveal-item flex items-center gap-2.5 sm:gap-3 mb-4 flex-wrap"
+              data-reveal-index="0"
+            >
+              <span
+                class="bg-[#830d10] text-white font-bold text-[11px] sm:text-[12px] px-3.5 py-1.5 rounded-full tracking-wide shrink-0 shadow-sm"
+              >
+                KÍNH MỜI QUÝ CÔ
+              </span>
+              <div
+                class="flex-1 min-w-[140px] border-b border-dotted border-[#8c6222] pb-0.5"
+              >
+                <span
+                  id="guest-name-display"
+                  class="guest-name-sharp text-[15.5px] sm:text-[17px] px-1 select-text"
+                  >[Họ và tên]</span
+                >
+              </div>
+            </div>
+
+            <!-- Row 2: THỜI GIAN: 19h, Chủ nhật 25/10/2026 -->
+            <div
+              class="reveal-item flex items-center gap-2.5 sm:gap-3 mb-2.5"
+              data-reveal-index="1"
+            >
+              <span
+                class="bg-[#b7872d] text-white font-bold text-[11.5px] sm:text-[12.5px] px-2.5 py-1 rounded-[2px] tracking-wide w-[92px] sm:w-[98px] text-center shrink-0"
+              >
+                THỜI GIAN:
+              </span>
+              <span class="font-bold text-[13px] sm:text-[14px] text-[#1f1f1f]">
+                19h, Chủ nhật 25/10/2026
+              </span>
+            </div>
+
+            <!-- Row 3: ĐỊA ĐIỂM : 129 Chùa Láng - Đống Đa - Hà Nội -->
+            <div
+              class="reveal-item flex items-center gap-2.5 sm:gap-3 mb-4"
+              data-reveal-index="2"
+            >
+              <span
+                class="bg-[#b7872d] text-white font-bold text-[11.5px] sm:text-[12.5px] px-2.5 py-1 rounded-[2px] tracking-wide w-[92px] sm:w-[98px] text-center shrink-0 flex justify-between"
+              >
+                <span>ĐỊA ĐIỂM</span><span>:</span>
+              </span>
+              <span class="font-bold text-[13px] sm:text-[14px] text-[#1f1f1f]">
+                129 Chùa Láng - Đống Đa - Hà Nội
+              </span>
+            </div>
+
+            <!-- Invitation Body Text (Exact wording & line rhythm as Image 3) -->
+            <div
+              class="text-[12.5px] sm:text-[13.5px] leading-[1.6] text-[#2c2c2c] font-normal space-y-3.5"
+            >
+              <p class="reveal-item" data-reveal-index="3">
+                Để chúc mừng ngày Phụ nữ Việt Nam 20/10 Tập đoàn “Anh 03” TC
+                KTĐN trân trọng kính với Quý cô đến với buổi tiệc này.
+              </p>
+              <p class="reveal-item" data-reveal-index="4">
+                Buổi tiệc hứa hẹn sẽ có nhiều bất ngờ cùng với món chủ đạo là mỳ
+                cay hứa hẹn sẽ giúp Quý cô được giải toả áp lực sau những ngày
+                ôn thi miệt mài.
+              </p>
+              <p class="reveal-item" data-reveal-index="5">
+                Tập đoàn rất mong cô sẽ góp mặt tại bữa tiệc này!
+              </p>
+            </div>
+
+            <!-- Right-aligned Signature -->
+            <div
+              class="reveal-item mt-1 text-right text-[12.5px] sm:text-[13.5px] leading-[1.55] text-[#2c2c2c] font-normal pr-1"
+              data-reveal-index="6"
+            >
+              <p>“Anh 03” TC KTĐN K64</p>
+              <p>Xin cảm ơn!</p>
+            </div>
+          </div>
+
+          <div id="inv-envelope-pocket" class="envelope-pocket-wrap w-full">
+            <!-- SVG Red Linen Envelope Pocket + Shadows + Gold Wax Seal -->
+            <svg
+              class="w-full h-full overflow-visible"
+              viewBox="0 0 440 210"
+              preserveAspectRatio="none"
+            >
+              <defs>
+                <!-- Rich Crimson Linen Crosshatch Pattern -->
+                <pattern
+                  id="redLinen"
+                  width="6"
+                  height="6"
+                  patternUnits="userSpaceOnUse"
+                >
+                  <rect width="6" height="6" fill="#9e080e" />
+                  <path
+                    d="M 0 0 L 6 0 M 0 0 L 0 6"
+                    stroke="#7d0409"
+                    stroke-width="0.7"
+                    opacity="0.55"
+                  />
+                  <path
+                    d="M 3 0 L 3 6 M 0 3 L 6 3"
+                    stroke="#b80d14"
+                    stroke-width="0.5"
+                    opacity="0.4"
+                  />
+                </pattern>
+
+                <linearGradient id="leftFlapShade" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0%" stop-color="#c30e15" stop-opacity="0.35" />
+                  <stop offset="60%" stop-color="#8c060b" stop-opacity="0.2" />
+                  <stop
+                    offset="100%"
+                    stop-color="#420104"
+                    stop-opacity="0.75"
+                  />
+                </linearGradient>
+
+                <linearGradient id="rightFlapShade" x1="1" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#c30e15" stop-opacity="0.35" />
+                  <stop offset="55%" stop-color="#96070d" stop-opacity="0.15" />
+                  <stop
+                    offset="100%"
+                    stop-color="#4a0104"
+                    stop-opacity="0.65"
+                  />
+                </linearGradient>
+
+                <linearGradient
+                  id="bottomFlapShade"
+                  x1="0"
+                  y1="0"
+                  x2="0"
+                  y2="1"
+                >
+                  <stop offset="0%" stop-color="#b80c13" stop-opacity="0.3" />
+                  <stop
+                    offset="100%"
+                    stop-color="#5a0206"
+                    stop-opacity="0.75"
+                  />
+                </linearGradient>
+
+                <filter
+                  id="flapShadow"
+                  x="-20%"
+                  y="-20%"
+                  width="140%"
+                  height="140%"
+                >
+                  <feDropShadow
+                    dx="0"
+                    dy="-4"
+                    stdDeviation="6"
+                    flood-color="#000000"
+                    flood-opacity="0.45"
+                  />
+                </filter>
+
+                <!-- Wax Seal Metallic Gold Gradients -->
+                <radialGradient id="waxGoldOuter" cx="35%" cy="30%" r="70%">
+                  <stop offset="0%" stop-color="#fff3b8" />
+                  <stop offset="35%" stop-color="#deb558" />
+                  <stop offset="75%" stop-color="#9c6f1e" />
+                  <stop offset="100%" stop-color="#6b470c" />
+                </radialGradient>
+                <radialGradient id="waxGoldInner" cx="60%" cy="65%" r="65%">
+                  <stop offset="0%" stop-color="#f7da86" />
+                  <stop offset="55%" stop-color="#c29237" />
+                  <stop offset="100%" stop-color="#7c5412" />
+                </radialGradient>
+              </defs>
+
+              <!-- Left Triangle Flap -->
+              <polygon
+                points="0,0 220,132 0,210"
+                fill="url(#redLinen)"
+                filter="url(#flapShadow)"
+              />
+              <polygon points="0,0 220,132 0,210" fill="url(#leftFlapShade)" />
+
+              <!-- Right Triangle Flap -->
+              <polygon
+                points="440,0 220,132 440,210"
+                fill="url(#redLinen)"
+                filter="url(#flapShadow)"
+              />
+              <polygon
+                points="440,0 220,132 440,210"
+                fill="url(#rightFlapShade)"
+              />
+
+              <!-- Bottom Center Triangle Overlap Flap (Full width base to prevent any seam) -->
+              <polygon
+                points="0,210 220,124 440,210"
+                fill="url(#redLinen)"
+                filter="url(#flapShadow)"
+              />
+              <polygon
+                points="0,210 220,124 440,210"
+                fill="url(#bottomFlapShade)"
+              />
+              <line
+                x1="65"
+                y1="210"
+                x2="220"
+                y2="124"
+                stroke="#d1232a"
+                stroke-width="1"
+                opacity="0.45"
+              />
+              <line
+                x1="375"
+                y1="210"
+                x2="220"
+                y2="124"
+                stroke="#660206"
+                stroke-width="1"
+                opacity="0.5"
+              />
+            </svg>
+
+            <!-- Realistic 3D Gold Wax Seal in the Center Intersection -->
+            <div
+              class="absolute left-1/2 top-[59%] -translate-x-1/2 -translate-y-1/2 w-[70px] h-[70px] sm:w-[76px] sm:h-[76px] wax-seal-glow"
+            >
+              <svg
+                viewBox="0 0 100 100"
+                class="w-full h-full drop-shadow-[0_6px_10px_rgba(0,0,0,0.65)]"
+              >
+                <!-- Irregular organic wax outer rim -->
+                <path
+                  d="M50 4 C64 3, 77 9, 86 20 C95 31, 97 46, 94 60 C91 74, 83 87, 69 93 C55 99, 39 97, 26 91 C13 85, 5 72, 4 57 C3 42, 8 26, 19 16 C30 6, 36 5, 50 4 Z"
+                  fill="url(#waxGoldOuter)"
+                />
+                <!-- Inner recessed stamp ring -->
+                <circle
+                  cx="50"
+                  cy="50"
+                  r="34"
+                  fill="url(#waxGoldInner)"
+                  stroke="#6e480b"
+                  stroke-width="2"
+                />
+                <circle
+                  cx="50"
+                  cy="50"
+                  r="31"
+                  fill="none"
+                  stroke="#fce694"
+                  stroke-width="1"
+                  stroke-dasharray="3,2"
+                  opacity="0.75"
+                />
+                <!-- Embossed Botanical Rose / Laurel Relief inside Seal -->
+                <g
+                  stroke="#fff0b3"
+                  stroke-width="1.6"
+                  fill="none"
+                  opacity="0.85"
+                  stroke-linecap="round"
+                >
+                  <path d="M50 74 C50 55, 50 38, 50 26" />
+                  <path
+                    d="M50 62 C40 58, 34 50, 36 42 C42 44, 48 52, 50 62 Z"
+                    fill="rgba(255,235,160,0.25)"
+                  />
+                  <path
+                    d="M50 54 C60 50, 66 42, 64 34 C58 36, 52 44, 50 54 Z"
+                    fill="rgba(255,235,160,0.25)"
+                  />
+                  <path
+                    d="M50 44 C42 40, 38 33, 41 27 C46 29, 49 36, 50 44 Z"
+                    fill="rgba(255,235,160,0.25)"
+                  />
+                  <circle cx="50" cy="24" r="3.5" fill="#ffe89e" />
+                </g>
+              </svg>
+            </div>
+
+            <!-- Blurred Golden Ribbon Foreground Accent at Bottom-Left (matching Image 3) -->
+            <svg
+              class="absolute -bottom-3 -left-8 w-36 h-36 pointer-events-none opacity-90"
+              style="filter: blur(3.5px)"
+              viewBox="0 0 120 120"
+              fill="none"
+            >
+              <path
+                d="M-10 35 C45 25, 85 55, 65 95 C45 125, 10 110, 25 75"
+                stroke="url(#ribbonGold)"
+                stroke-width="22"
+                stroke-linecap="round"
+              />
+            </svg>
+
+            <!-- Bottom Greeting Caption: Hân hạnh mời Quý cô đến với buổi tiệc! -->
+            <div
+              class="reveal-item absolute bottom-3.5 inset-x-0 text-center px-2"
+              data-reveal-index="7"
+            >
+              <p
+                class="text-[#f7ebd2] text-[12px] sm:text-[13.5px] font-medium tracking-wide drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]"
+              >
+                Hân hạnh mời Quý cô đến với buổi tiệc!
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      const AppState = {
+        currentPhase: "FORM", // 'FORM' | 'TRANSITION' | 'INVITATION'
+        guestName: "",
+        audioEnabled: true,
+        audioCtx: null,
+        skyAnimId: null,
+        part2AnimId: null,
+      };
+
+      // Initialize or resume Web Audio Context
+      function ensureAudioContext() {
+        if (!AppState.audioCtx) {
+          const AudioContextClass =
+            window.AudioContext || window.webkitAudioContext;
+          if (AudioContextClass) {
+            AppState.audioCtx = new AudioContextClass();
+          }
+        }
+        if (AppState.audioCtx && AppState.audioCtx.state === "suspended") {
+          AppState.audioCtx.resume();
+        }
+      }
+
+      // Play soft whoosh when firework launches from left/right side
+      function playLaunchSound(panValue = 0) {
+        if (!AppState.audioEnabled || !AppState.audioCtx) return;
+        try {
+          const ctx = AppState.audioCtx;
+          const now = ctx.currentTime;
+
+          const osc = ctx.createOscillator();
+          const gain = ctx.createGain();
+          const panner = ctx.createStereoPanner
+            ? ctx.createStereoPanner()
+            : null;
+
+          osc.type = "sine";
+          osc.frequency.setValueAtTime(220, now);
+          osc.frequency.exponentialRampToValueAtTime(680, now + 0.35);
+
+          gain.gain.setValueAtTime(0.001, now);
+          gain.gain.linearRampToValueAtTime(0.035, now + 0.08);
+          gain.gain.exponentialRampToValueAtTime(0.0001, now + 0.36);
+
+          if (panner) {
+            panner.pan.setValueAtTime(panValue, now);
+            osc.connect(gain);
+            gain.connect(panner);
+            panner.connect(ctx.destination);
+          } else {
+            osc.connect(gain);
+            gain.connect(ctx.destination);
+          }
+
+          osc.start(now);
+          osc.stop(now + 0.37);
+        } catch (e) {
+          // Ignore audio errors if blocked
+        }
+      }
+
+      function playExplosionSound(panValue = 0, scale = 1) {
+        if (!AppState.audioEnabled || !AppState.audioCtx) return;
+        try {
+          const ctx = AppState.audioCtx;
+          const now = ctx.currentTime;
+
+          // 1. Deep punchy sub-bass thump
+          const subOsc = ctx.createOscillator();
+          const subGain = ctx.createGain();
+          subOsc.type = "triangle";
+          subOsc.frequency.setValueAtTime(130 * scale, now);
+          subOsc.frequency.exponentialRampToValueAtTime(28, now + 0.45);
+
+          subGain.gain.setValueAtTime(0.22, now);
+          subGain.gain.exponentialRampToValueAtTime(0.001, now + 0.48);
+
+          subOsc.connect(subGain);
+          subGain.connect(ctx.destination);
+          subOsc.start(now);
+          subOsc.stop(now + 0.5);
+
+          // 2. White noise burst for realistic firework explosion & sparkle crackle
+          const bufferSize = ctx.sampleRate * 0.85;
+          const noiseBuffer = ctx.createBuffer(1, bufferSize, ctx.sampleRate);
+          const output = noiseBuffer.getChannelData(0);
+          for (let i = 0; i < bufferSize; i++) {
+            output[i] =
+              (Math.random() * 2 - 1) * Math.exp(-i / (ctx.sampleRate * 0.22));
+          }
+
+          const whiteNoise = ctx.createBufferSource();
+          whiteNoise.buffer = noiseBuffer;
+
+          const filter = ctx.createBiquadFilter();
+          filter.type = "bandpass";
+          filter.frequency.setValueAtTime(950, now);
+          filter.Q.setValueAtTime(0.7, now);
+
+          const noiseGain = ctx.createGain();
+          noiseGain.gain.setValueAtTime(0.18 * scale, now);
+          noiseGain.gain.exponentialRampToValueAtTime(0.001, now + 0.8);
+
+          if (ctx.createStereoPanner) {
+            const panner = ctx.createStereoPanner();
+            panner.pan.setValueAtTime(panValue, now);
+            whiteNoise.connect(filter);
+            filter.connect(noiseGain);
+            noiseGain.connect(panner);
+            panner.connect(ctx.destination);
+          } else {
+            whiteNoise.connect(filter);
+            filter.connect(noiseGain);
+            noiseGain.connect(ctx.destination);
+          }
+
+          whiteNoise.start(now);
+          whiteNoise.stop(now + 0.85);
+        } catch (e) {
+          // Ignore audio context issues
+        }
+      }
+
+      const formEl = document.getElementById("ftu-survey-form");
+      const inputFullname = document.getElementById("input-fullname");
+      const inputOtherBank = document.getElementById("input-other-bank");
+      const radioOther = document.getElementById("radio-other");
+      const radioVcb = document.getElementById("radio-vcb");
+      const inputAccount = document.getElementById("input-account");
+      const btnClearForm = document.getElementById("btn-clear-form");
+      const guestNameDisplay = document.getElementById("guest-name-display");
+
+      // Unlock Web Audio on first touch/click anywhere for seamless mobile audio
+      window.addEventListener("touchstart", ensureAudioContext, {
+        passive: true,
+        once: true,
+      });
+      window.addEventListener("click", ensureAudioContext, {
+        passive: true,
+        once: true,
+      });
+
+      // Automatically select "Mục khác" radio when typing in the other text field
+      inputOtherBank.addEventListener("focus", () => {
+        radioOther.checked = true;
+      });
+      inputOtherBank.addEventListener("input", () => {
+        if (inputOtherBank.value.trim().length > 0) {
+          radioOther.checked = true;
+        }
+      });
+
+      // Clear all answers button
+      btnClearForm.addEventListener("click", () => {
+        inputFullname.value = "";
+        inputOtherBank.value = "";
+        inputAccount.value = "";
+        radioOther.checked = false;
+        radioVcb.checked = false;
+      });
+
+      // Submit Form -> Trigger 60Hz Transition Sequence
+      formEl.addEventListener("submit", (e) => {
+        e.preventDefault();
+        ensureAudioContext();
+
+        // Blur active input on mobile so virtual keyboard dismisses smoothly before transition
+        if (
+          document.activeElement &&
+          typeof document.activeElement.blur === "function"
+        ) {
+          document.activeElement.blur();
+        }
+
+        const enteredName = inputFullname.value.trim();
+        AppState.guestName = enteredName || "[Họ và tên]";
+        guestNameDisplay.textContent = AppState.guestName;
+
+        startTransitionSequence();
+      });
+
+      const blackOverlay = document.getElementById("black-fade-overlay");
+      const part1View = document.getElementById("part1-form-view");
+      const skyStage = document.getElementById("sky-transition-stage");
+      const part2Stage = document.getElementById("part2-stage");
+      const skyCanvas = document.getElementById("sky-canvas");
+      const skyCtx = skyCanvas.getContext("2d");
+      const letterPaperCard = document.getElementById("letter-paper-card");
+      const invitationCardBox = document.getElementById("invitation-card-box");
+
+      function resizeSkyCanvas() {
+        const dpr = Math.min(window.devicePixelRatio || 1, 2);
+        skyCanvas.width = window.innerWidth * dpr;
+        skyCanvas.height = window.innerHeight * dpr;
+        skyCtx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      }
+      window.addEventListener("resize", resizeSkyCanvas);
+
+      // Pre-rendered Hyper-Detailed 3D Volumetric Cloud Sprites (Cumulonimbus, Rolling Wave Crest, Swirling Mist)
+      const cloudSprites = [];
+      function build3DCloudSprites() {
+        if (cloudSprites.length > 0) return;
+
+        // Pseudo-random deterministic generator for organic fractal micro-puffs
+        let seed = 42;
+        const rand = () => {
+          seed = (seed * 1664525 + 1013904223) % 4294967296;
+          return seed / 4294967296;
+        };
+
+        const templates = [
+          // Variant 0: Towering Dramatic Cumulonimbus Wave Crest
+          {
+            type: "CUMULUS_TOWER",
+            cores: [
+              { x: 0, y: 28, r: 78 },
+              { x: -68, y: 36, r: 64 },
+              { x: 72, y: 34, r: 66 },
+              { x: -115, y: 50, r: 50 },
+              { x: 118, y: 48, r: 52 },
+              { x: -38, y: -14, r: 68 },
+              { x: 36, y: -12, r: 64 },
+              { x: 0, y: -42, r: 60 },
+              { x: -78, y: 6, r: 52 },
+              { x: 80, y: 8, r: 50 },
+              { x: -18, y: -62, r: 44 },
+              { x: 22, y: -56, r: 40 },
+            ],
+          },
+          // Variant 1: Rolling Ocean-Wave Cloud Bank (Crest & Trough)
+          {
+            type: "WAVE_ROLLER",
+            cores: [
+              { x: -125, y: 38, r: 52 },
+              { x: -78, y: 18, r: 68 },
+              { x: -22, y: -8, r: 74 },
+              { x: 38, y: 8, r: 70 },
+              { x: 92, y: 26, r: 62 },
+              { x: 138, y: 42, r: 46 },
+              { x: -48, y: -38, r: 56 },
+              { x: 8, y: -36, r: 58 },
+              { x: 58, y: -18, r: 52 },
+              { x: -98, y: -6, r: 48 },
+              { x: 18, y: 36, r: 66 },
+            ],
+          },
+          // Variant 2: Billowing Surging Cloud Vortex
+          {
+            type: "SURGE_BILLOW",
+            cores: [
+              { x: 0, y: 18, r: 74 },
+              { x: -62, y: 24, r: 62 },
+              { x: 64, y: 22, r: 62 },
+              { x: -28, y: -24, r: 64 },
+              { x: 30, y: -22, r: 60 },
+              { x: 0, y: -50, r: 52 },
+              { x: -96, y: 38, r: 46 },
+              { x: 98, y: 36, r: 48 },
+              { x: -56, y: -12, r: 48 },
+              { x: 58, y: -10, r: 48 },
+            ],
+          },
+          // Variant 3: Fast-Moving Vapor & Mist Tendril ("Bay ngun ngút")
+          {
+            type: "VAPOR_STREAM",
+            cores: [
+              { x: -110, y: 12, r: 46 },
+              { x: -60, y: 4, r: 56 },
+              { x: -5, y: -2, r: 62 },
+              { x: 52, y: 6, r: 56 },
+              { x: 105, y: 16, r: 44 },
+              { x: -32, y: -18, r: 46 },
+              { x: 26, y: -14, r: 46 },
+            ],
+          },
+        ];
+
+        templates.forEach((tpl) => {
+          const off = document.createElement("canvas");
+          off.width = 460;
+          off.height = 300;
+          const octx = off.getContext("2d");
+          const cx = 230;
+          const cy = 162;
+
+          // Expand cores with organic sub-puffs for true 3D fractal cloud detail
+          const allPuffs = [];
+          tpl.cores.forEach((c) => {
+            allPuffs.push({ x: c.x, y: c.y, r: c.r, isCore: true });
+            const subCount = tpl.type === "VAPOR_STREAM" ? 3 : 5;
+            for (let s = 0; s < subCount; s++) {
+              const ang = (s / subCount) * Math.PI * 2 + rand() * 0.8;
+              const dist = c.r * (0.38 + rand() * 0.35);
+              allPuffs.push({
+                x: c.x + Math.cos(ang) * dist,
+                y: c.y + Math.sin(ang) * dist * 0.82,
+                r: c.r * (0.42 + rand() * 0.32),
+                isCore: false,
+              });
+            }
+          });
+
+          // Sort bottom-to-top, back-to-front so upper sunlit domes overlap deep shadowed bases
+          allPuffs.sort((a, b) => b.y - a.y);
+
+          // Pass 1: Deep dramatic storm-blue & indigo 3D base occlusion shadow
+          allPuffs.forEach((p) => {
+            const px = cx + p.x;
+            const py = cy + p.y + p.r * 0.26;
+            const g = octx.createRadialGradient(
+              px,
+              py,
+              p.r * 0.08,
+              px,
+              py,
+              p.r * 1.12,
+            );
+            if (tpl.type === "VAPOR_STREAM") {
+              g.addColorStop(0, "rgba(120, 158, 210, 0.28)");
+              g.addColorStop(0.65, "rgba(148, 182, 228, 0.14)");
+              g.addColorStop(1, "rgba(148, 182, 228, 0)");
+            } else {
+              g.addColorStop(0, "rgba(42, 68, 112, 0.62)");
+              g.addColorStop(0.52, "rgba(72, 106, 158, 0.38)");
+              g.addColorStop(0.82, "rgba(110, 148, 198, 0.16)");
+              g.addColorStop(1, "rgba(110, 148, 198, 0)");
+            }
+            octx.fillStyle = g;
+            octx.beginPath();
+            octx.arc(px, py, p.r * 1.12, 0, Math.PI * 2);
+            octx.fill();
+          });
+
+          // Pass 2: Rich 3D Volumetric Spherical Shading (Directional sunlight from top-left)
+          allPuffs.forEach((p) => {
+            const px = cx + p.x;
+            const py = cy + p.y;
+            const grad = octx.createRadialGradient(
+              px - p.r * 0.32,
+              py - p.r * 0.35,
+              p.r * 0.04,
+              px + p.r * 0.08,
+              py + p.r * 0.12,
+              p.r * 1.02,
+            );
+
+            const heightFactor = Math.max(0, Math.min(1, (45 - p.y) / 95));
+            if (tpl.type === "VAPOR_STREAM") {
+              grad.addColorStop(0, "rgba(255, 255, 255, 0.85)");
+              grad.addColorStop(0.45, "rgba(240, 248, 255, 0.58)");
+              grad.addColorStop(0.8, "rgba(195, 220, 250, 0.25)");
+              grad.addColorStop(1, "rgba(195, 220, 250, 0)");
+            } else {
+              grad.addColorStop(0, "rgba(255, 254, 250, 0.98)");
+              grad.addColorStop(
+                0.32,
+                `rgba(250, 253, 255, ${0.92 + heightFactor * 0.06})`,
+              );
+              grad.addColorStop(
+                0.64,
+                `rgba(210, 228, 248, ${0.78 + heightFactor * 0.12})`,
+              );
+              grad.addColorStop(0.86, "rgba(142, 174, 216, 0.46)");
+              grad.addColorStop(1, "rgba(115, 150, 198, 0)");
+            }
+
+            octx.fillStyle = grad;
+            octx.beginPath();
+            octx.arc(px, py, p.r, 0, Math.PI * 2);
+            octx.fill();
+          });
+
+          // Pass 3: Brilliant Silver-Gold Sunlit Rim Highlights on Upper Cloud Crests
+          allPuffs.forEach((p) => {
+            if (p.y <= 15) {
+              const px = cx + p.x;
+              const py = cy + p.y;
+              const rim = octx.createRadialGradient(
+                px - p.r * 0.34,
+                py - p.r * 0.4,
+                p.r * 0.02,
+                px - p.r * 0.16,
+                py - p.r * 0.2,
+                p.r * 0.76,
+              );
+              rim.addColorStop(0, "rgba(255, 255, 255, 0.98)");
+              rim.addColorStop(0.4, "rgba(255, 250, 230, 0.62)");
+              rim.addColorStop(0.75, "rgba(255, 245, 215, 0.18)");
+              rim.addColorStop(1, "rgba(255, 255, 255, 0)");
+              octx.fillStyle = rim;
+              octx.beginPath();
+              octx.arc(px, py, p.r * 0.85, 0, Math.PI * 2);
+              octx.fill();
+            }
+          });
+
+          cloudSprites.push(off);
+        });
+      }
+
+      // Dense Multi-layered 3D Rolling Wave Clouds + Flight Trail for 60Hz Sky Scene
+      let skyClouds = [];
+      let sunRays = [];
+      let birdFlightTrail = [];
+      let birdTrailSparkles = [];
+
+      function initSkyClouds() {
+        build3DCloudSprites();
+        skyClouds = [];
+        sunRays = [];
+        birdFlightTrail = [];
+        birdTrailSparkles = [];
+        const w = window.innerWidth;
+        const h = window.innerHeight;
+        const isMobile = w < 640;
+
+        // Crepuscular Sunbeams (God-rays) piercing through the churning clouds
+        const rayCount = isMobile ? 6 : 9;
+        for (let r = 0; r < rayCount; r++) {
+          sunRays.push({
+            angle: 0.38 + (r / rayCount) * 0.55 + (Math.random() - 0.5) * 0.08,
+            width: (isMobile ? 45 : 85) + Math.random() * (isMobile ? 55 : 110),
+            alpha: 0.08 + Math.random() * 0.12,
+            phase: Math.random() * Math.PI * 2,
+            speed: 1.2 + Math.random() * 1.5,
+          });
+        }
+
+        // Adaptive cloud density so both mobile & laptop lock smoothly at 60Hz
+        const totalClouds = isMobile ? 88 : 135;
+        for (let i = 0; i < totalClouds; i++) {
+          // 5 layers: 1=Horizon Giants, 2=Mid-Back Rollers, 3=Churning Wave Crests, 4=Surging Billows, 5=Fast Foreground Vapor ("Bay ngun ngút")
+          const layer = (i % 5) + 1;
+          const depthFactor = layer / 5;
+          const isVaporLayer = layer === 5;
+
+          const baseScale = isMobile ? 0.46 : 0.62;
+          const spriteIdx = isVaporLayer ? 3 : i % 3;
+
+          skyClouds.push({
+            spriteIdx,
+            baseX: Math.random() * (w + 680) - 340,
+            baseY: Math.random() * (h + 320) - 160,
+            x: 0,
+            y: 0,
+            scale:
+              (baseScale + Math.random() * 0.72) * (0.45 + depthFactor * 0.88),
+            // Fast horizontal & vertical flow for dramatic "bay ngun ngút" motion
+            speedX:
+              (28 + Math.random() * 55) *
+              (0.35 + depthFactor * 1.15) *
+              (isVaporLayer ? 1.55 : 1),
+            speedY:
+              (16 + Math.random() * 32) *
+              (0.35 + depthFactor * 1.05) *
+              (isVaporLayer ? 1.45 : 1),
+            // Gerstner-like rolling wave parameters ("cuộn trào như sóng")
+            wavePhase: Math.random() * Math.PI * 2,
+            waveSpeed: (1.8 + Math.random() * 2.4) * (0.65 + depthFactor * 0.6),
+            waveAmpX: (16 + Math.random() * 34) * depthFactor,
+            waveAmpY: (14 + Math.random() * 28) * depthFactor,
+            rollAngleAmp:
+              (0.06 + Math.random() * 0.14) * (isVaporLayer ? 1.3 : 1),
+            pulseAmp: 0.06 + Math.random() * 0.1,
+            currentAngle: 0,
+            currentScaleX: 1,
+            currentScaleY: 1,
+            opacity: isVaporLayer
+              ? 0.45 + Math.random() * 0.3
+              : 0.76 + depthFactor * 0.24,
+            layer,
+          });
+        }
+      }
+
+      function updateAndDrawCloudCluster(ctx, cloud, dt, globalFade) {
+        const sprite = cloudSprites[cloud.spriteIdx];
+        if (!sprite) return;
+
+        const w = window.innerWidth;
+        const h = window.innerHeight;
+
+        // Advance base flow + rolling wave phase
+        cloud.baseX += cloud.speedX * dt;
+        cloud.baseY += cloud.speedY * dt;
+        cloud.wavePhase += cloud.waveSpeed * dt;
+
+        // Wrap seamlessly around screen bounds
+        const margin = 380;
+        if (cloud.baseX > w + margin) cloud.baseX = -margin;
+        if (cloud.baseY > h + 280) cloud.baseY = -280;
+
+        // Trochoidal / Gerstner rolling wave displacement ("cuộn trào như sóng")
+        const cosP = Math.cos(cloud.wavePhase);
+        const sinP = Math.sin(cloud.wavePhase);
+        cloud.x = cloud.baseX + cosP * cloud.waveAmpX;
+        cloud.y = cloud.baseY + sinP * cloud.waveAmpY;
+
+        // Subtle 3D billowing rotation and crest stretching
+        cloud.currentAngle = sinP * cloud.rollAngleAmp;
+        const breathe = 1 + Math.sin(cloud.wavePhase * 1.35) * cloud.pulseAmp;
+        const stretchX = cloud.scale * breathe * (1 + cosP * 0.06);
+        const stretchY = cloud.scale * breathe * (1 - cosP * 0.04);
+
+        ctx.save();
+        ctx.translate(cloud.x, cloud.y);
+        ctx.rotate(cloud.currentAngle);
+        ctx.scale(stretchX, stretchY);
+        ctx.globalAlpha = Math.max(0, Math.min(1, cloud.opacity * globalFade));
+        ctx.drawImage(sprite, -230, -162);
+        ctx.restore();
+      }
+
+      function drawAtmosphericSunbeams(ctx, w, h, skyTime, fadeFactor) {
+        if (fadeFactor <= 0.02) return;
+        const originX = w * 0.18;
+        const originY = -h * 0.12;
+        const maxLen = Math.hypot(w, h) * 1.35;
+
+        ctx.save();
+        ctx.globalCompositeOperation = "screen";
+        for (let i = 0; i < sunRays.length; i++) {
+          const ray = sunRays[i];
+          const pulse = 0.7 + 0.3 * Math.sin(skyTime * ray.speed + ray.phase);
+          const alpha = ray.alpha * pulse * fadeFactor;
+
+          ctx.save();
+          ctx.translate(originX, originY);
+          ctx.rotate(ray.angle + Math.sin(skyTime * 0.4 + i) * 0.03);
+
+          const grad = ctx.createLinearGradient(0, 0, maxLen, 0);
+          grad.addColorStop(0, `rgba(255, 250, 220, ${alpha * 1.4})`);
+          grad.addColorStop(0.35, `rgba(255, 244, 200, ${alpha})`);
+          grad.addColorStop(0.75, `rgba(210, 235, 255, ${alpha * 0.35})`);
+          grad.addColorStop(1, "rgba(255, 255, 255, 0)");
+
+          ctx.fillStyle = grad;
+          ctx.beginPath();
+          ctx.moveTo(0, -ray.width * 0.25);
+          ctx.lineTo(maxLen, -ray.width * 1.45);
+          ctx.lineTo(maxLen, ray.width * 1.45);
+          ctx.lineTo(0, ray.width * 0.25);
+          ctx.closePath();
+          ctx.fill();
+          ctx.restore();
+        }
+        ctx.restore();
+      }
+
+      // Draw luminous golden flight path, aerodynamic wingtip ribbons & sparkles to clearly show the bird's trajectory
+      function updateAndDrawBirdFlightPath(
+        ctx,
+        birdX,
+        birdY,
+        birdScale,
+        bankAngle,
+        wingPhase,
+        dt,
+        skyTime,
+        fadeAlpha,
+      ) {
+        // Compute left & right wingtip world coordinates for twin aerodynamic slipstream ribbons
+        const flap = Math.sin(wingPhase);
+        const localWingX = 82 * birdScale;
+        const localWingY = (-36 * flap - 8) * birdScale;
+        const cosB = Math.cos(bankAngle);
+        const sinB = Math.sin(bankAngle);
+
+        const leftWingX = birdX + (-localWingX * cosB - localWingY * sinB);
+        const leftWingY = birdY + (-localWingX * sinB + localWingY * cosB);
+        const rightWingX = birdX + (localWingX * cosB - localWingY * sinB);
+        const rightWingY = birdY + (localWingX * sinB + localWingY * cosB);
+
+        if (skyTime < 5.25) {
+          birdFlightTrail.push({
+            x: birdX,
+            y: birdY + 12 * birdScale,
+            lx: leftWingX,
+            ly: leftWingY,
+            rx: rightWingX,
+            ry: rightWingY,
+            scale: birdScale,
+            age: 0,
+          });
+
+          // Spawn golden stardust & floating feather particles along the flight path
+          if (Math.random() < 0.85) {
+            const isFeather = Math.random() < 0.24;
+            birdTrailSparkles.push({
+              x: birdX + (Math.random() - 0.5) * 44 * birdScale,
+              y:
+                birdY + 14 * birdScale + (Math.random() - 0.5) * 16 * birdScale,
+              vx: (Math.random() - 0.5) * 32 - Math.sin(bankAngle) * 28,
+              vy: 26 + Math.random() * 42,
+              size: (isFeather ? 5.5 : 2.6) * (0.55 + birdScale * 0.35),
+              alpha: 0.95,
+              decay: isFeather ? 0.42 : 0.58 + Math.random() * 0.35,
+              rot: Math.random() * Math.PI * 2,
+              rotSpeed: (Math.random() - 0.5) * 3.5,
+              isFeather,
+              color: Math.random() > 0.35 ? "#fef08a" : "#ffffff",
+            });
+          }
+        }
+
+        // Advance trail points downward slightly with the moving air mass so the S-curve trajectory is clearly visible
+        for (let i = birdFlightTrail.length - 1; i >= 0; i--) {
+          const pt = birdFlightTrail[i];
+          pt.age += dt;
+          pt.y += 42 * dt;
+          pt.ly += 42 * dt;
+          pt.ry += 42 * dt;
+          if (pt.age > 2.2) {
+            birdFlightTrail.splice(i, 1);
+          }
+        }
+
+        if (birdFlightTrail.length > 2) {
+          ctx.save();
+          ctx.lineCap = "round";
+          ctx.lineJoin = "round";
+
+          // 1. Center Golden Magic Trajectory Stream
+          for (let i = 1; i < birdFlightTrail.length; i++) {
+            const p0 = birdFlightTrail[i - 1];
+            const p1 = birdFlightTrail[i];
+            const lifeRatio = Math.max(0, 1 - p1.age / 2.2);
+            const segAlpha = lifeRatio * lifeRatio * 0.78 * fadeAlpha;
+            if (segAlpha <= 0.01) continue;
+
+            // Outer warm golden glow
+            ctx.beginPath();
+            ctx.moveTo(p0.x, p0.y);
+            ctx.lineTo(p1.x, p1.y);
+            ctx.strokeStyle = `rgba(251, 191, 36, ${segAlpha * 0.48})`;
+            ctx.lineWidth = Math.max(2, 16 * p1.scale * lifeRatio);
+            ctx.stroke();
+
+            // Inner bright ivory-gold core line showing exact flight curve
+            ctx.beginPath();
+            ctx.moveTo(p0.x, p0.y);
+            ctx.lineTo(p1.x, p1.y);
+            ctx.strokeStyle = `rgba(255, 252, 225, ${segAlpha * 0.92})`;
+            ctx.lineWidth = Math.max(1.2, 4.8 * p1.scale * lifeRatio);
+            ctx.stroke();
+
+            // 2. Twin Wingtip Wind Vortex Ribbons (Left & Right slipstreams)
+            const wingAlpha = Math.max(0, 1 - p1.age / 1.55) * 0.52 * fadeAlpha;
+            if (wingAlpha > 0.01) {
+              ctx.beginPath();
+              ctx.moveTo(p0.lx, p0.ly);
+              ctx.lineTo(p1.lx, p1.ly);
+              ctx.moveTo(p0.rx, p0.ry);
+              ctx.lineTo(p1.ry ? p1.rx : p0.rx, p1.ry);
+              ctx.strokeStyle = `rgba(255, 255, 255, ${wingAlpha})`;
+              ctx.lineWidth = Math.max(0.9, 2.4 * p1.scale * lifeRatio);
+              ctx.stroke();
+            }
+          }
+          ctx.restore();
+        }
+
+        // 3. Update & Draw Sparkling Stardust & Drifting Mini-Feathers along the flight path
+        for (let i = birdTrailSparkles.length - 1; i >= 0; i--) {
+          const sp = birdTrailSparkles[i];
+          sp.x += sp.vx * dt;
+          sp.y += sp.vy * dt;
+          sp.rot += sp.rotSpeed * dt;
+          sp.alpha -= sp.decay * dt;
+
+          if (sp.alpha <= 0.02) {
+            birdTrailSparkles.splice(i, 1);
+            continue;
+          }
+
+          ctx.save();
+          ctx.globalAlpha = Math.max(0, sp.alpha * fadeAlpha);
+          ctx.translate(sp.x, sp.y);
+          ctx.rotate(sp.rot);
+
+          if (sp.isFeather) {
+            // Delicate drifting white-gold feather left in wake
+            ctx.fillStyle = "#ffffff";
+            ctx.strokeStyle = "#bae6fd";
+            ctx.lineWidth = 0.7;
+            ctx.beginPath();
+            ctx.ellipse(
+              0,
+              0,
+              sp.size * 1.35,
+              sp.size * 0.42,
+              0,
+              0,
+              Math.PI * 2,
+            );
+            ctx.fill();
+            ctx.stroke();
+          } else {
+            // 4-point golden sparkle star
+            ctx.fillStyle = sp.color;
+            ctx.shadowColor = "#fbbf24";
+            ctx.shadowBlur = 6;
+            const r = sp.size;
+            ctx.beginPath();
+            ctx.moveTo(0, -r * 1.4);
+            ctx.quadraticCurveTo(r * 0.3, -r * 0.3, r * 1.4, 0);
+            ctx.quadraticCurveTo(r * 0.3, r * 0.3, 0, r * 1.4);
+            ctx.quadraticCurveTo(-r * 0.3, r * 0.3, -r * 1.4, 0);
+            ctx.quadraticCurveTo(-r * 0.3, -r * 0.3, 0, -r * 1.4);
+            ctx.closePath();
+            ctx.fill();
+          }
+          ctx.restore();
+        }
+      }
+
+      // Draw High-Contrast, Larger 3D Messenger Dove flying into the clouds carrying the Royal Letter
+      function drawMessengerBird(
+        ctx,
+        x,
+        y,
+        scale,
+        wingPhase,
+        bankAngle,
+        carryingLetter = true,
+      ) {
+        ctx.save();
+        ctx.translate(x, y);
+        ctx.rotate(bankAngle);
+        ctx.scale(scale, scale);
+
+        const flap = Math.sin(wingPhase);
+        const wingTipY = -46 * flap - 10;
+        const wingMidY = -24 * flap - 8;
+
+        // High-contrast dark-navy + golden halo behind the white bird so it stands out sharply against white clouds
+        const contrastHalo = ctx.createRadialGradient(0, -2, 6, 0, -2, 86);
+        contrastHalo.addColorStop(0, "rgba(255, 246, 195, 0.72)");
+        contrastHalo.addColorStop(0.38, "rgba(245, 158, 11, 0.28)");
+        contrastHalo.addColorStop(0.72, "rgba(15, 38, 78, 0.24)");
+        contrastHalo.addColorStop(1, "rgba(15, 38, 78, 0)");
+        ctx.fillStyle = contrastHalo;
+        ctx.beginPath();
+        ctx.arc(0, -2, 86, 0, Math.PI * 2);
+        ctx.fill();
+
+        // Strong 3D drop shadow to separate the bird from bright cloud tops
+        ctx.shadowColor = "rgba(12, 28, 58, 0.55)";
+        ctx.shadowBlur = 14;
+        ctx.shadowOffsetY = 6;
+
+        // 1. If carrying the letter, draw the Royal Red & Gold Envelope held in golden talons
+        if (carryingLetter) {
+          ctx.save();
+          ctx.translate(0, 24);
+          ctx.rotate(Math.sin(wingPhase * 0.5) * 0.08);
+
+          const envW = 58;
+          const envH = 38.5;
+          const halfW = envW / 2;
+          const halfH = envH / 2;
+
+          // Envelope drop shadow
+          ctx.shadowColor = "rgba(0, 0, 0, 0.48)";
+          ctx.shadowBlur = 10;
+          ctx.shadowOffsetY = 5;
+
+          // Crimson envelope body
+          const envGrad = ctx.createLinearGradient(
+            -halfW,
+            -halfH,
+            halfW,
+            halfH,
+          );
+          envGrad.addColorStop(0, "#dc141e");
+          envGrad.addColorStop(0.5, "#9e070d");
+          envGrad.addColorStop(1, "#630206");
+          ctx.fillStyle = envGrad;
+          ctx.strokeStyle = "#fde047";
+          ctx.lineWidth = 1.6;
+          ctx.beginPath();
+          ctx.roundRect(-halfW, -halfH, envW, envH, 3);
+          ctx.fill();
+          ctx.stroke();
+
+          ctx.shadowBlur = 0;
+          ctx.shadowOffsetY = 0;
+
+          // Envelope V-flap lines
+          ctx.strokeStyle = "rgba(254, 240, 138, 0.9)";
+          ctx.lineWidth = 1.25;
+          ctx.beginPath();
+          ctx.moveTo(-halfW, -halfH);
+          ctx.lineTo(0, 4.5);
+          ctx.lineTo(halfW, -halfH);
+          ctx.stroke();
+
+          // Gold Wax Seal in the center
+          const sealGrad = ctx.createRadialGradient(-1, 2, 0.5, 0, 3.8, 6.2);
+          sealGrad.addColorStop(0, "#fff9c4");
+          sealGrad.addColorStop(0.55, "#eab308");
+          sealGrad.addColorStop(1, "#784f10");
+          ctx.fillStyle = sealGrad;
+          ctx.beginPath();
+          ctx.arc(0, 3.8, 5.8, 0, Math.PI * 2);
+          ctx.fill();
+
+          ctx.restore();
+
+          // Bird's golden talons clasping the top of the letter
+          ctx.strokeStyle = "#d97706";
+          ctx.lineWidth = 2.2;
+          ctx.lineCap = "round";
+          ctx.beginPath();
+          ctx.moveTo(-7, 8);
+          ctx.lineTo(-9, 16);
+          ctx.moveTo(7, 8);
+          ctx.lineTo(9, 16);
+          ctx.stroke();
+        }
+
+        // 2. Spread Tail Feathers (Fanned white & pearl-blue plumage with crisp outline)
+        const tailGrad = ctx.createLinearGradient(0, 6, 0, 39);
+        tailGrad.addColorStop(0, "#dbeafe");
+        tailGrad.addColorStop(0.55, "#ffffff");
+        tailGrad.addColorStop(1, "#93c5fd");
+        ctx.fillStyle = tailGrad;
+        ctx.strokeStyle = "#476b9e";
+        ctx.lineWidth = 1.3;
+        ctx.beginPath();
+        ctx.moveTo(-7, 8);
+        ctx.lineTo(-25, 35);
+        ctx.quadraticCurveTo(0, 42, 25, 35);
+        ctx.lineTo(7, 8);
+        ctx.closePath();
+        ctx.fill();
+        ctx.stroke();
+
+        // Feather rib lines on tail
+        ctx.strokeStyle = "rgba(71, 107, 158, 0.65)";
+        ctx.lineWidth = 1;
+        for (let t = -3; t <= 3; t++) {
+          ctx.beginPath();
+          ctx.moveTo(t * 1.6, 10);
+          ctx.lineTo(t * 6.4, 34);
+          ctx.stroke();
+        }
+
+        // 3. Left & Right Articulated 3D Wings (Larger span & crisp royal-blue/gold edge definition)
+        [-1, 1].forEach((dir) => {
+          ctx.save();
+          ctx.scale(dir, 1);
+
+          const wingGrad = ctx.createLinearGradient(0, -12, 92, wingTipY);
+          wingGrad.addColorStop(0, "#ffffff");
+          wingGrad.addColorStop(0.5, "#f8fafc");
+          wingGrad.addColorStop(0.82, "#dbeafe");
+          wingGrad.addColorStop(1, "#ffffff");
+
+          ctx.fillStyle = wingGrad;
+          ctx.strokeStyle = "#3b5988";
+          ctx.lineWidth = 1.45;
+
+          ctx.beginPath();
+          ctx.moveTo(7, -7);
+          ctx.bezierCurveTo(32, wingMidY - 16, 64, wingTipY - 10, 92, wingTipY);
+          ctx.bezierCurveTo(78, wingTipY + 14, 52, wingMidY + 20, 9, 7);
+          ctx.closePath();
+          ctx.fill();
+          ctx.stroke();
+
+          // Golden sunlit leading-edge highlight on wing
+          ctx.strokeStyle = "rgba(253, 224, 71, 0.85)";
+          ctx.lineWidth = 1.6;
+          ctx.beginPath();
+          ctx.moveTo(8, -7);
+          ctx.bezierCurveTo(32, wingMidY - 15, 62, wingTipY - 9, 90, wingTipY);
+          ctx.stroke();
+
+          // Layered primary flight feathers at wingtips
+          ctx.strokeStyle = "rgba(59, 89, 136, 0.72)";
+          ctx.lineWidth = 1.15;
+          for (let f = 1; f <= 6; f++) {
+            const ratio = f / 7;
+            const fx = 28 + ratio * 58;
+            const fy = wingMidY * (1 - ratio) + wingTipY * ratio;
+            ctx.beginPath();
+            ctx.moveTo(fx - 14, fy + 2);
+            ctx.lineTo(fx, fy + 9);
+            ctx.stroke();
+          }
+
+          ctx.restore();
+        });
+
+        // 4. Sculpted 3D Dove Body & Head
+        const bodyGrad = ctx.createRadialGradient(-3, -6, 2, 0, 0, 24);
+        bodyGrad.addColorStop(0, "#ffffff");
+        bodyGrad.addColorStop(0.65, "#f1f5f9");
+        bodyGrad.addColorStop(1, "#93c5fd");
+        ctx.fillStyle = bodyGrad;
+        ctx.strokeStyle = "#3b5988";
+        ctx.lineWidth = 1.35;
+        ctx.beginPath();
+        ctx.ellipse(0, 0, 12.5, 20, 0, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.stroke();
+
+        // Dove Head (facing forward/upward into the sky)
+        const headGrad = ctx.createRadialGradient(-2, -21, 1, 0, -20, 10);
+        headGrad.addColorStop(0, "#ffffff");
+        headGrad.addColorStop(1, "#bfdbfe");
+        ctx.fillStyle = headGrad;
+        ctx.strokeStyle = "#3b5988";
+        ctx.lineWidth = 1.25;
+        ctx.beginPath();
+        ctx.arc(0, -21, 8.5, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.stroke();
+
+        // Golden Messenger Ribbon Collar around neck
+        ctx.strokeStyle = "#eab308";
+        ctx.lineWidth = 2.2;
+        ctx.beginPath();
+        ctx.arc(0, -13, 8.5, 0.25, Math.PI - 0.25);
+        ctx.stroke();
+
+        // Golden Beak
+        ctx.fillStyle = "#f59e0b";
+        ctx.strokeStyle = "#92400e";
+        ctx.lineWidth = 0.9;
+        ctx.beginPath();
+        ctx.moveTo(-3, -27);
+        ctx.lineTo(0, -35);
+        ctx.lineTo(3, -27);
+        ctx.closePath();
+        ctx.fill();
+        ctx.stroke();
+
+        ctx.restore();
+      }
+
+      // Draw the released envelope gliding smoothly from the bird's exact talons to the center and opening cleanly
+      function drawDroppedRoyalEnvelope(
+        ctx,
+        x,
+        y,
+        widthPx,
+        tilt,
+        flapOpenProgress,
+        innerGlowProgress,
+      ) {
+        ctx.save();
+        ctx.translate(x, y);
+        ctx.rotate(tilt);
+
+        const envW = widthPx;
+        const envH = widthPx * (160 / 240);
+        const halfW = envW / 2;
+        const halfH = envH / 2;
+        const cornerR = Math.max(2, envW * 0.025);
+
+        // Soft golden aura around the royal envelope as it descends
+        ctx.shadowColor = `rgba(251, 191, 36, ${0.35 + innerGlowProgress * 0.5})`;
+        ctx.shadowBlur = Math.max(8, envW * 0.14);
+
+        // 1. Envelope Back Base
+        const backGrad = ctx.createLinearGradient(0, -halfH, 0, halfH);
+        backGrad.addColorStop(0, "#6e0408");
+        backGrad.addColorStop(1, "#4d0205");
+        ctx.fillStyle = backGrad;
+        ctx.beginPath();
+        ctx.roundRect(-halfW, -halfH, envW, envH, cornerR);
+        ctx.fill();
+        ctx.shadowBlur = 0;
+
+        // 2. If the top flap is more than halfway open (3D angle > 90 deg), draw the open flap behind the letter slot
+        if (flapOpenProgress > 0.5) {
+          const openRatio = (flapOpenProgress - 0.5) * 2; // 0 -> 1
+          const flapTipY = -halfH - openRatio * (envH * 0.55);
+          const openFlapGrad = ctx.createLinearGradient(0, -halfH, 0, flapTipY);
+          openFlapGrad.addColorStop(0, "#7c050a");
+          openFlapGrad.addColorStop(1, "#a60a11");
+
+          ctx.fillStyle = openFlapGrad;
+          ctx.strokeStyle = "#f5d380";
+          ctx.lineWidth = Math.max(1, envW * 0.008);
+          ctx.beginPath();
+          ctx.moveTo(-halfW, -halfH);
+          ctx.lineTo(0, flapTipY);
+          ctx.lineTo(halfW, -halfH);
+          ctx.closePath();
+          ctx.fill();
+          ctx.stroke();
+        }
+
+        // 3. Strictly Clipped Inner Cream Letter Peek (never protrudes out the bottom or sides of the envelope!)
+        if (flapOpenProgress > 0.25) {
+          const peekRatio = Math.max(
+            0,
+            Math.min(1, (flapOpenProgress - 0.25) / 0.75),
+          );
+          const peekLift = peekRatio * (envH * 0.28);
+
+          ctx.save();
+          // Clip region extends above the top of the envelope so the letter can rise upward,
+          // while strictly bounded by the envelope's left, right, and bottom edges
+          ctx.beginPath();
+          ctx.rect(
+            -halfW + envW * 0.05,
+            -halfH - envH * 0.6,
+            envW * 0.9,
+            envH * 1.5,
+          );
+          ctx.clip();
+
+          const cardTopY = -halfH + envH * 0.08 - peekLift;
+          const cardH = envH * 0.85;
+          const cardW = envW * 0.86;
+
+          const paperGrad = ctx.createLinearGradient(
+            0,
+            cardTopY,
+            0,
+            cardTopY + cardH,
+          );
+          paperGrad.addColorStop(0, "#fffdf7");
+          paperGrad.addColorStop(1, "#f3ebd8");
+          ctx.fillStyle = paperGrad;
+          ctx.strokeStyle = "#d59f3b";
+          ctx.lineWidth = Math.max(1, envW * 0.006);
+          ctx.beginPath();
+          ctx.roundRect(-cardW / 2, cardTopY, cardW, cardH, cornerR * 0.8);
+          ctx.fill();
+          ctx.stroke();
+
+          // Subtle golden crest shimmer on the emerging top edge of the card
+          if (envW > 90) {
+            ctx.fillStyle = "#c59233";
+            ctx.font = `700 ${Math.round(envW * 0.075)}px "Playfair Display", serif`;
+            ctx.textAlign = "center";
+            ctx.fillText("THIỆP MỜI", 0, cardTopY + envH * 0.22);
+
+            ctx.fillStyle = "#e7c36f";
+            ctx.fillRect(
+              -cardW * 0.42,
+              cardTopY + envH * 0.28,
+              cardW * 0.84,
+              envH * 0.09,
+            );
+          }
+          ctx.restore();
+        }
+
+        // 4. Front Red Linen Envelope Pocket Flaps (Left, Right, Bottom V-Flaps)
+        // Left flap
+        const leftGrad = ctx.createLinearGradient(-halfW, 0, 0, 0);
+        leftGrad.addColorStop(0, "#ab0a11");
+        leftGrad.addColorStop(1, "#85050a");
+        ctx.fillStyle = leftGrad;
+        ctx.beginPath();
+        ctx.moveTo(-halfW, -halfH);
+        ctx.lineTo(0, envH * 0.12);
+        ctx.lineTo(-halfW, halfH);
+        ctx.closePath();
+        ctx.fill();
+
+        // Right flap
+        const rightGrad = ctx.createLinearGradient(halfW, 0, 0, 0);
+        rightGrad.addColorStop(0, "#a30910");
+        rightGrad.addColorStop(1, "#7d0409");
+        ctx.fillStyle = rightGrad;
+        ctx.beginPath();
+        ctx.moveTo(halfW, -halfH);
+        ctx.lineTo(0, envH * 0.12);
+        ctx.lineTo(halfW, halfH);
+        ctx.closePath();
+        ctx.fill();
+
+        // Bottom flap
+        const botGrad = ctx.createLinearGradient(0, envH * 0.06, 0, halfH);
+        botGrad.addColorStop(0, "#99080e");
+        botGrad.addColorStop(1, "#690307");
+        ctx.fillStyle = botGrad;
+        ctx.beginPath();
+        ctx.moveTo(-halfW, halfH);
+        ctx.lineTo(0, envH * 0.06);
+        ctx.lineTo(halfW, halfH);
+        ctx.closePath();
+        ctx.fill();
+
+        // Subtle gold trim along pocket folds
+        ctx.strokeStyle = "rgba(245, 211, 128, 0.45)";
+        ctx.lineWidth = Math.max(0.8, envW * 0.005);
+        ctx.beginPath();
+        ctx.moveTo(-halfW, halfH);
+        ctx.lineTo(0, envH * 0.06);
+        ctx.lineTo(halfW, halfH);
+        ctx.stroke();
+
+        // 5. If the top flap is still closed or opening (< 0.5), draw it in front so no paper ever clips through it
+        if (flapOpenProgress <= 0.5) {
+          const closeRatio = 1 - flapOpenProgress * 2; // 1 -> 0
+          const flapTipY = -halfH + closeRatio * (envH * 0.58);
+          const topFlapGrad = ctx.createLinearGradient(0, -halfH, 0, flapTipY);
+          topFlapGrad.addColorStop(0, "#b50c13");
+          topFlapGrad.addColorStop(1, "#8a060b");
+
+          ctx.fillStyle = topFlapGrad;
+          ctx.strokeStyle = "#f5d380";
+          ctx.lineWidth = Math.max(1, envW * 0.008);
+          ctx.beginPath();
+          ctx.moveTo(-halfW, -halfH);
+          ctx.lineTo(0, flapTipY);
+          ctx.lineTo(halfW, -halfH);
+          ctx.closePath();
+          ctx.fill();
+          ctx.stroke();
+        }
+
+        // 6. 3D Gold Wax Seal at the Pocket Intersection
+        const sealR = envW * 0.085;
+        const sealY = envH * 0.1;
+        const sealGrad = ctx.createRadialGradient(
+          -sealR * 0.3,
+          sealY - sealR * 0.3,
+          sealR * 0.1,
+          0,
+          sealY,
+          sealR,
+        );
+        sealGrad.addColorStop(0, "#fff5c0");
+        sealGrad.addColorStop(0.55, "#d59f3b");
+        sealGrad.addColorStop(1, "#784f10");
+
+        ctx.fillStyle = sealGrad;
+        ctx.beginPath();
+        ctx.arc(0, sealY, sealR, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.strokeStyle = "#fef08a";
+        ctx.lineWidth = Math.max(0.8, envW * 0.004);
+        ctx.stroke();
+
+        ctx.restore();
+      }
+
+      function startTransitionSequence() {
+        if (AppState.skyAnimId) cancelAnimationFrame(AppState.skyAnimId);
+        if (AppState.part2AnimId) cancelAnimationFrame(AppState.part2AnimId);
+
+        AppState.currentPhase = "TRANSITION";
+        resizeSkyCanvas();
+        initSkyClouds();
+
+        const startTime = performance.now();
+        let lastFrameTime = startTime;
+        let sceneSwitchedToSky = false;
+
+        // Timeline milestones (60Hz):
+        // 0.0s -> 1.0s: Screen darkens smoothly to black (1s)
+        // 1.0s -> 2.0s: Screen brightens smoothly revealing 3D Sky + Messenger Bird (1s)
+        // 1.0s -> 6.0s (5.0s of flight): Bird flies from near camera deep into the dense 3D clouds & releases the letter at skyTime = 5.0s
+        // 6.0s -> 7.5s (skyTime 5.0s -> 6.5s): Released letter glides smoothly from the exact bird talons to center screen & opens its seal
+        // 7.5s -> 12.5s (5.0s progressive letter reveal at 60Hz): The invitation card & every single line of content gradually reveal over 5 seconds
+
+        function stepTransition(now) {
+          const dt = Math.min((now - lastFrameTime) / 1000, 0.05);
+          lastFrameTime = now;
+          const elapsed = (now - startTime) / 1000;
+
+          // Phase A: 0s -> 1s Darken
+          if (elapsed <= 1.0) {
+            blackOverlay.style.opacity = (elapsed / 1.0).toFixed(4);
+          }
+          // Phase B: Switch DOM behind black curtain at 1.0s & brighten from 1.0s -> 2.0s
+          else if (elapsed <= 2.0) {
+            if (!sceneSwitchedToSky) {
+              sceneSwitchedToSky = true;
+              part1View.style.display = "none";
+              part2Stage.style.display = "none";
+              skyStage.style.display = "block";
+            }
+            const brightenProgress = (elapsed - 1.0) / 1.0;
+            blackOverlay.style.opacity = Math.max(
+              0,
+              1 - brightenProgress,
+            ).toFixed(4);
+          } else {
+            blackOverlay.style.opacity = "0";
+          }
+
+          // Render 60Hz 3D Sky, Dense Clouds, Bird & Dropped Envelope once elapsed >= 1.0s
+          if (elapsed >= 1.0) {
+            const skyTime = elapsed - 1.0; // 0.0s -> 6.5s
+            const w = window.innerWidth;
+            const h = window.innerHeight;
+            const isMobile = w < 640;
+
+            // Smoothly shift sky background to the royal crimson velvet atmosphere as the letter descends
+            const warmShift = Math.max(0, Math.min(1, (skyTime - 5.0) / 1.45));
+            skyCtx.clearRect(0, 0, w, h);
+
+            const skyGrad = skyCtx.createLinearGradient(0, 0, 0, h);
+            if (warmShift < 0.01) {
+              skyGrad.addColorStop(0, "#0c2348");
+              skyGrad.addColorStop(0.32, "#1d569e");
+              skyGrad.addColorStop(0.68, "#66a3f2");
+              skyGrad.addColorStop(1, "#e3f1ff");
+            } else {
+              skyGrad.addColorStop(
+                0,
+                interpolateHex("#0c2348", "#2a0306", warmShift),
+              );
+              skyGrad.addColorStop(
+                0.45,
+                interpolateHex("#1d569e", "#4a0307", warmShift),
+              );
+              skyGrad.addColorStop(
+                1,
+                interpolateHex("#e3f1ff", "#0d0204", warmShift),
+              );
+            }
+            skyCtx.fillStyle = skyGrad;
+            skyCtx.fillRect(0, 0, w, h);
+
+            // Atmospheric sun glow & dramatic sunbeams in upper sky for 3D realism
+            const cloudFade = Math.max(0, 1 - warmShift * 0.92);
+            if (warmShift < 0.98) {
+              const sunGlow = skyCtx.createRadialGradient(
+                w * 0.18,
+                h * 0.1,
+                10,
+                w * 0.18,
+                h * 0.1,
+                Math.max(w, h) * 0.65,
+              );
+              sunGlow.addColorStop(
+                0,
+                `rgba(255, 253, 238, ${(1 - warmShift) * 0.78})`,
+              );
+              sunGlow.addColorStop(
+                0.28,
+                `rgba(255, 242, 200, ${(1 - warmShift) * 0.35})`,
+              );
+              sunGlow.addColorStop(1, "rgba(255, 255, 255, 0)");
+              skyCtx.fillStyle = sunGlow;
+              skyCtx.fillRect(0, 0, w, h);
+            }
+
+            // Update & draw Back & Mid-Back 3D Rolling Wave Clouds (Layers 1, 2, 3)
+            for (const c of skyClouds) {
+              if (c.layer <= 3) {
+                updateAndDrawCloudCluster(skyCtx, c, dt, cloudFade);
+              }
+            }
+
+            // Diagonal Volumetric Sunbeams (God-rays) shining between mid and foreground cloud waves
+            drawAtmosphericSunbeams(skyCtx, w, h, skyTime, cloudFade);
+
+            // Draw Layer 4 Surging Billows BEHIND the bird so the bird & its flight path remain 100% clear and unobstructed
+            for (const c of skyClouds) {
+              if (c.layer === 4) {
+                updateAndDrawCloudCluster(
+                  skyCtx,
+                  c,
+                  dt,
+                  Math.max(0, 1 - warmShift * 0.95),
+                );
+              }
+            }
+
+            // Bird Flight Logic: 0s -> 5.0s of skyTime (Larger bird & pronounced S-curve flight trajectory)
+            const flightDuration = 5.0;
+            const flightProgress = Math.min(1, skyTime / flightDuration);
+            const easeFlight = 1 - Math.pow(1 - flightProgress, 2.1);
+
+            // Larger initial and distant scale so the bird is always prominent and unmistakable
+            const initialBirdScale = isMobile ? 2.35 : 3.05;
+            const maxSwayRadius = isMobile ? Math.min(w * 0.3, 115) : 205;
+
+            const birdScale = initialBirdScale * (1 - easeFlight * 0.68);
+            const swayX =
+              Math.sin(skyTime * 2.05) *
+              (maxSwayRadius * (1 - easeFlight * 0.35));
+            const birdX = w * 0.5 + swayX;
+            const birdY =
+              h * 0.84 - easeFlight * (h * 0.56) + Math.cos(skyTime * 2.8) * 20;
+            const bankAngle = Math.cos(skyTime * 2.05) * 0.28;
+            const wingPhase = skyTime * 15.0;
+
+            const carryingLetter = skyTime < 5.0;
+            const postReleaseFade =
+              skyTime > 5.0 ? Math.max(0, 1 - (skyTime - 5.0) / 1.35) : 1;
+
+            // Draw the glowing golden flight trajectory, twin wingtip wind streams & sparkles
+            updateAndDrawBirdFlightPath(
+              skyCtx,
+              birdX,
+              birdY,
+              birdScale,
+              bankAngle,
+              wingPhase,
+              dt,
+              skyTime,
+              postReleaseFade,
+            );
+
+            // Keep bird flying gracefully into the distant sky after releasing the letter at 5.0s
+            if (skyTime < 6.45) {
+              const extraFarScale =
+                skyTime > 5.0
+                  ? birdScale * Math.max(0.28, 1 - (skyTime - 5.0) * 0.32)
+                  : birdScale;
+              const extraFarY =
+                skyTime > 5.0 ? birdY - (skyTime - 5.0) * 62 : birdY;
+              skyCtx.save();
+              skyCtx.globalAlpha = postReleaseFade;
+              drawMessengerBird(
+                skyCtx,
+                birdX,
+                extraFarY,
+                extraFarScale,
+                wingPhase,
+                bankAngle,
+                carryingLetter,
+              );
+              skyCtx.restore();
+            }
+
+            // Draw only subtle translucent Layer 5 Vapor Mist wisps in the foreground (reduced alpha so bird stays crystal clear)
+            for (const c of skyClouds) {
+              if (c.layer === 5) {
+                updateAndDrawCloudCluster(
+                  skyCtx,
+                  c,
+                  dt,
+                  Math.max(0, (1 - warmShift * 0.95) * 0.42),
+                );
+              }
+            }
+
+            // At skyTime >= 5.0s: Bird releases the letter with 100% exact position, scale, and angle continuity
+            if (skyTime >= 5.0) {
+              const dropDuration = 1.5; // 5.0s -> 6.5s
+              const dropTime = skyTime - 5.0;
+              const tNorm = Math.min(1, dropTime / dropDuration);
+
+              // Exact bird transform at skyTime = 5.0s
+              const releaseBirdScale = initialBirdScale * (1 - 1 * 0.68);
+              const releaseBank = Math.cos(5.0 * 2.05) * 0.28;
+              const releaseBirdX =
+                w * 0.5 +
+                Math.sin(5.0 * 2.05) * (maxSwayRadius * (1 - 1 * 0.35));
+              const releaseBirdY =
+                h * 0.84 - 1 * (h * 0.56) + Math.cos(5.0 * 2.8) * 20;
+
+              // Exact world position & width of the envelope in the bird's claws at t = 5.0s
+              const startEnvX =
+                releaseBirdX - Math.sin(releaseBank) * (24 * releaseBirdScale);
+              const startEnvY =
+                releaseBirdY + Math.cos(releaseBank) * (24 * releaseBirdScale);
+              const startWidthPx = 58 * releaseBirdScale;
+              const startTilt = releaseBank + Math.sin(5.0 * 15.0 * 0.5) * 0.08;
+
+              // Target center position & size matching the real invitation envelope pocket on mobile & laptop
+              const targetX = w * 0.5;
+              const targetY = h * 0.56;
+              const targetWidthPx = Math.min(w * (isMobile ? 0.9 : 0.84), 440);
+
+              // Smooth cubic ease-in-out for position & scale
+              const smoothMove =
+                tNorm < 0.5
+                  ? 4 * tNorm * tNorm * tNorm
+                  : 1 - Math.pow(-2 * tNorm + 2, 3) / 2;
+
+              // Gentle aerial flutter as the letter descends
+              const flutterAmp = isMobile ? 16 : 28;
+              const flutterX =
+                Math.sin(dropTime * Math.PI * 2.2) *
+                (1 - smoothMove) *
+                flutterAmp;
+              const flutterTilt =
+                Math.sin(dropTime * Math.PI * 2.2) * (1 - smoothMove) * 0.16;
+
+              const envX =
+                startEnvX + (targetX - startEnvX) * smoothMove + flutterX;
+              const envY = startEnvY + (targetY - startEnvY) * smoothMove;
+              const envW =
+                startWidthPx + (targetWidthPx - startWidthPx) * smoothMove;
+              const envTilt = startTilt * (1 - smoothMove) + flutterTilt;
+
+              // Top flap smoothly opens during the second half of the descent (tNorm: 0.42 -> 0.96)
+              const rawFlap = Math.max(0, Math.min(1, (tNorm - 0.42) / 0.54));
+              const flapOpenProgress = 0.5 - 0.5 * Math.cos(rawFlap * Math.PI);
+
+              drawDroppedRoyalEnvelope(
+                skyCtx,
+                envX,
+                envY,
+                envW,
+                envTilt,
+                flapOpenProgress,
+                smoothMove,
+              );
+            }
+
+            // Hand off seamlessly to the 5-second 60Hz progressive Invitation Card & Content Reveal
+            if (skyTime >= 6.5) {
+              revealPart2Invitation();
+              return;
+            }
+          }
+
+          AppState.skyAnimId = requestAnimationFrame(stepTransition);
+        }
+
+        AppState.skyAnimId = requestAnimationFrame(stepTransition);
+      }
+
+      // Helper to blend hex colors smoothly during sky-to-velvet transition
+      function interpolateHex(hex1, hex2, factor) {
+        const c1 = parseInt(hex1.slice(1), 16);
+        const c2 = parseInt(hex2.slice(1), 16);
+        const r = Math.round(
+          ((c1 >> 16) & 255) +
+            (((c2 >> 16) & 255) - ((c1 >> 16) & 255)) * factor,
+        );
+        const g = Math.round(
+          ((c1 >> 8) & 255) + (((c2 >> 8) & 255) - ((c1 >> 8) & 255)) * factor,
+        );
+        const b = Math.round((c1 & 255) + ((c2 & 255) - (c1 & 255)) * factor);
+        return `rgb(${r}, ${g}, ${b})`;
+      }
+
+      // Cubic ease-out helper for buttery 60Hz motion
+      function easeOutCubic(x) {
+        return 1 - Math.pow(1 - x, 3);
+      }
+
+      // Quintic ease-out helper for ultra-smooth letter extraction
+      function easeOutQuint(x) {
+        return 1 - Math.pow(1 - x, 5);
+      }
+
+      function revealPart2Invitation() {
+        if (AppState.skyAnimId) cancelAnimationFrame(AppState.skyAnimId);
+        AppState.currentPhase = "INVITATION";
+
+        const invHeaderTitle = document.getElementById("inv-header-title");
+        const invGoldBanner = document.getElementById("inv-gold-banner");
+        const invEnvelopePocket = document.getElementById(
+          "inv-envelope-pocket",
+        );
+        const revealItems = Array.from(
+          document.querySelectorAll(".reveal-item"),
+        );
+
+        // Initialize all elements in their starting state before showing DOM to prevent any single-frame flash
+        invitationCardBox.style.opacity = "0";
+        invitationCardBox.style.transform = "translateY(18px) scale(0.94)";
+
+        invEnvelopePocket.style.opacity = "0";
+        invEnvelopePocket.style.transform = "translateY(20px)";
+
+        invHeaderTitle.style.opacity = "0";
+        invHeaderTitle.style.transform = "translateY(28px) scale(0.94)";
+
+        invGoldBanner.style.opacity = "0";
+        invGoldBanner.style.transform = "translateY(24px) scale(0.96)";
+
+        letterPaperCard.style.opacity = "0";
+        letterPaperCard.style.transform = "translateY(115px) scale(0.96)";
+
+        revealItems.forEach((el) => {
+          el.style.opacity = "0";
+          el.style.transform = "translateY(16px)";
+          el.style.filter = "blur(3px)";
+        });
+
+        skyStage.style.display = "none";
+        part1View.style.display = "none";
+        part2Stage.style.display = "block";
+
+        // Start continuous 60Hz background fireworks & falling flowers immediately
+        startPart2ContinuousEffects();
+
+        // 5.0-SECOND (5000ms) 60Hz PROGRESSIVE LETTER OPENING & CONTENT REVEAL CHOREOGRAPHY
+        const totalRevealDuration = 5000; // 5.0 seconds
+        const revealStart = performance.now();
+
+        // Staggered timing windows (in seconds, from 0.0s to 5.0s) for each content item inside the letter
+        const itemWindows = [
+          { start: 1.65, end: 2.45 }, // 0: KÍNH MỜI QUÝ CÔ + [Họ và tên]
+          { start: 2.1, end: 2.85 }, // 1: THỜI GIAN: 19h, Chủ nhật 25/10/2026
+          { start: 2.5, end: 3.25 }, // 2: ĐỊA ĐIỂM : 129 Chùa Láng - Đống Đa - Hà Nội
+          { start: 2.9, end: 3.65 }, // 3: Đoạn 1 (Để chúc mừng ngày Phụ nữ Việt Nam 20/10...)
+          { start: 3.35, end: 4.1 }, // 4: Đoạn 2 (Buổi tiệc hứa hẹn sẽ có nhiều bất ngờ...)
+          { start: 3.8, end: 4.5 }, // 5: Đoạn 3 (Tập đoàn rất mong cô sẽ góp mặt...)
+          { start: 4.15, end: 4.85 }, // 6: Chữ ký (“Anh 03” TC KTĐN K64 / Xin cảm ơn!)
+          { start: 4.4, end: 5.0 }, // 7: Lời chào cuối phong bì (Hân hạnh mời Quý cô...)
+        ];
+
+        function animateFiveSecondReveal(now) {
+          const elapsedMs = now - revealStart;
+          const tSec = Math.min(5.0, elapsedMs / 1000);
+
+          // 1. Card Frame & Red Envelope Pocket emerge smoothly (0.0s -> 0.85s)
+          const frameP = easeOutCubic(Math.min(1, tSec / 0.85));
+          invitationCardBox.style.opacity = frameP.toFixed(4);
+          invitationCardBox.style.transform = `translateY(${((1 - frameP) * 18).toFixed(2)}px) scale(${(0.94 + frameP * 0.06).toFixed(4)})`;
+
+          const pocketP = easeOutCubic(Math.min(1, tSec / 0.75));
+          invEnvelopePocket.style.opacity = pocketP.toFixed(4);
+          invEnvelopePocket.style.transform = `translateY(${((1 - pocketP) * 20).toFixed(2)}px)`;
+
+          // 2. Metallic Gold Header "THIỆP MỜI" unfolds (0.30s -> 1.35s)
+          const headerRaw = Math.max(0, Math.min(1, (tSec - 0.3) / 1.05));
+          const headerP = easeOutCubic(headerRaw);
+          invHeaderTitle.style.opacity = headerP.toFixed(4);
+          invHeaderTitle.style.transform = `translateY(${((1 - headerP) * 28).toFixed(2)}px) scale(${(0.94 + headerP * 0.06).toFixed(4)})`;
+
+          // 3. Golden Banner "THAM DỰ ĐẠI TIỆC MỲ CAY" unfolds (0.65s -> 1.70s)
+          const bannerRaw = Math.max(0, Math.min(1, (tSec - 0.65) / 1.05));
+          const bannerP = easeOutCubic(bannerRaw);
+          invGoldBanner.style.opacity = bannerP.toFixed(4);
+          invGoldBanner.style.transform = `translateY(${((1 - bannerP) * 24).toFixed(2)}px) scale(${(0.96 + bannerP * 0.04).toFixed(4)})`;
+
+          // 4. Cream Letter Paper smoothly slides UP out of the Red Envelope Pocket (0.85s -> 2.75s)
+          const paperRaw = Math.max(0, Math.min(1, (tSec - 0.85) / 1.9));
+          const paperP = easeOutQuint(paperRaw);
+          const paperOpacity = easeOutCubic(Math.min(1, paperRaw * 1.6));
+          const slideY = (1 - paperP) * 115;
+          const scalePaper = 0.96 + paperP * 0.04;
+          letterPaperCard.style.opacity = paperOpacity.toFixed(4);
+          letterPaperCard.style.transform = `translateY(${slideY.toFixed(2)}px) scale(${scalePaper.toFixed(4)})`;
+
+          // 5. Each content item inside the letter gradually reveals one by one up to 5.0s
+          for (let i = 0; i < revealItems.length; i++) {
+            const el = revealItems[i];
+            const win = itemWindows[i] || { start: 2.0, end: 4.5 };
+            const itemRaw = Math.max(
+              0,
+              Math.min(1, (tSec - win.start) / (win.end - win.start)),
+            );
+            const itemP = easeOutCubic(itemRaw);
+
+            el.style.opacity = itemP.toFixed(4);
+            el.style.transform = `translateY(${((1 - itemP) * 16).toFixed(2)}px)`;
+            const blurPx = (1 - itemP) * 3;
+            el.style.filter =
+              blurPx > 0.08 ? `blur(${blurPx.toFixed(2)}px)` : "none";
+          }
+
+          if (elapsedMs < totalRevealDuration) {
+            requestAnimationFrame(animateFiveSecondReveal);
+          } else {
+            // Clean final state at 5.0s completion
+            invitationCardBox.style.opacity = "1";
+            invitationCardBox.style.transform = "translateY(0px) scale(1)";
+            invEnvelopePocket.style.opacity = "1";
+            invEnvelopePocket.style.transform = "translateY(0px)";
+            invHeaderTitle.style.opacity = "1";
+            invHeaderTitle.style.transform = "translateY(0px) scale(1)";
+            invGoldBanner.style.opacity = "1";
+            invGoldBanner.style.transform = "translateY(0px) scale(1)";
+            letterPaperCard.style.opacity = "1";
+            letterPaperCard.style.transform = "translateY(0px) scale(1)";
+            revealItems.forEach((el) => {
+              el.style.opacity = "1";
+              el.style.transform = "translateY(0px)";
+              el.style.filter = "none";
+            });
+          }
+        }
+
+        requestAnimationFrame(animateFiveSecondReveal);
+      }
+
+      const fwCanvas = document.getElementById("fireworks-canvas");
+      const fwCtx = fwCanvas.getContext("2d");
+      const petalsCanvas = document.getElementById("petals-canvas");
+      const petalsCtx = petalsCanvas.getContext("2d");
+
+      function resizePart2Canvases() {
+        const dpr = Math.min(window.devicePixelRatio || 1, 2);
+        const w = window.innerWidth;
+        const h = window.innerHeight;
+
+        fwCanvas.width = w * dpr;
+        fwCanvas.height = h * dpr;
+        fwCtx.setTransform(dpr, 0, 0, dpr, 0, 0);
+
+        petalsCanvas.width = w * dpr;
+        petalsCanvas.height = h * dpr;
+        petalsCtx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      }
+      window.addEventListener("resize", resizePart2Canvases);
+
+      let fallingItems = [];
+      let fireworkRockets = [];
+      let fireworkSparks = [];
+
+      // Initialize 60Hz continuous falling flowers, rose petals, and golden ribbons
+      function initFallingFlowers() {
+        fallingItems = [];
+        const w = window.innerWidth;
+        const h = window.innerHeight;
+        const count = Math.min(65, Math.max(38, Math.floor(w / 24)));
+
+        const types = [
+          "ROSE_BLOSSOM",
+          "SAKURA_FLOWER",
+          "ROSE_PETAL",
+          "GOLD_RIBBON",
+          "GOLD_CONFETTI",
+        ];
+        for (let i = 0; i < count; i++) {
+          fallingItems.push(
+            createFallingItem(w, h, true, types[i % types.length]),
+          );
+        }
+      }
+
+      function createFallingItem(w, h, randomY = false, type = "ROSE_BLOSSOM") {
+        return {
+          x: Math.random() * w,
+          y: randomY ? Math.random() * h : -40 - Math.random() * 80,
+          vx: (Math.random() - 0.5) * 28,
+          vy: 48 + Math.random() * 68,
+          size: 8 + Math.random() * 11,
+          angle: Math.random() * Math.PI * 2,
+          spinSpeed: (Math.random() - 0.5) * 2.8,
+          swayPhase: Math.random() * Math.PI * 2,
+          swaySpeed: 1.5 + Math.random() * 2.2,
+          swayAmp: 22 + Math.random() * 32,
+          flipPhase: Math.random() * Math.PI * 2,
+          flipSpeed: 2.0 + Math.random() * 3.0,
+          type,
+          opacity: 0.75 + Math.random() * 0.25,
+        };
+      }
+
+      function drawFallingFlowerOrRibbon(ctx, item) {
+        ctx.save();
+        ctx.translate(item.x, item.y);
+        ctx.rotate(item.angle);
+        const flipScale = 0.45 + 0.55 * Math.abs(Math.cos(item.flipPhase));
+        ctx.scale(1, flipScale);
+        ctx.globalAlpha = item.opacity;
+
+        const s = item.size;
+
+        if (item.type === "ROSE_BLOSSOM") {
+          // Full 5-petal crimson & ruby blossom
+          for (let p = 0; p < 5; p++) {
+            ctx.save();
+            ctx.rotate((p * Math.PI * 2) / 5);
+            const grad = ctx.createRadialGradient(
+              0,
+              -s * 0.4,
+              1,
+              0,
+              -s * 0.4,
+              s * 0.75,
+            );
+            grad.addColorStop(0, "#ffccd5");
+            grad.addColorStop(0.45, "#e11d48");
+            grad.addColorStop(1, "#881337");
+            ctx.fillStyle = grad;
+            ctx.beginPath();
+            ctx.moveTo(0, 0);
+            ctx.bezierCurveTo(
+              -s * 0.55,
+              -s * 0.35,
+              -s * 0.45,
+              -s * 1.05,
+              0,
+              -s * 0.95,
+            );
+            ctx.bezierCurveTo(s * 0.45, -s * 1.05, s * 0.55, -s * 0.35, 0, 0);
+            ctx.fill();
+            ctx.restore();
+          }
+          // Golden stamen center
+          ctx.beginPath();
+          ctx.arc(0, 0, s * 0.22, 0, Math.PI * 2);
+          ctx.fillStyle = "#fde047";
+          ctx.fill();
+        } else if (item.type === "SAKURA_FLOWER") {
+          // Delicate pink-gold 20/10 blossom
+          for (let p = 0; p < 5; p++) {
+            ctx.save();
+            ctx.rotate((p * Math.PI * 2) / 5);
+            ctx.fillStyle = "#fda4af";
+            ctx.beginPath();
+            ctx.moveTo(0, 0);
+            ctx.quadraticCurveTo(-s * 0.45, -s * 0.5, -s * 0.2, -s * 0.95);
+            ctx.lineTo(0, -s * 0.78);
+            ctx.lineTo(s * 0.2, -s * 0.95);
+            ctx.quadraticCurveTo(s * 0.45, -s * 0.5, 0, 0);
+            ctx.fill();
+            ctx.restore();
+          }
+          ctx.beginPath();
+          ctx.arc(0, 0, s * 0.18, 0, Math.PI * 2);
+          ctx.fillStyle = "#fbbf24";
+          ctx.fill();
+        } else if (item.type === "ROSE_PETAL") {
+          // Silky single rose petal
+          const pGrad = ctx.createLinearGradient(0, -s, 0, s);
+          pGrad.addColorStop(0, "#fb7185");
+          pGrad.addColorStop(0.6, "#be123c");
+          pGrad.addColorStop(1, "#881337");
+          ctx.fillStyle = pGrad;
+          ctx.beginPath();
+          ctx.moveTo(0, -s * 0.8);
+          ctx.bezierCurveTo(s * 0.8, -s * 0.8, s * 0.75, s * 0.6, 0, s * 0.85);
+          ctx.bezierCurveTo(
+            -s * 0.75,
+            s * 0.6,
+            -s * 0.8,
+            -s * 0.8,
+            0,
+            -s * 0.8,
+          );
+          ctx.fill();
+        } else if (item.type === "GOLD_RIBBON") {
+          // Metallic golden curling streamer (like Image 3)
+          const rGrad = ctx.createLinearGradient(-s, -s, s, s);
+          rGrad.addColorStop(0, "#b78327");
+          rGrad.addColorStop(0.5, "#fef08a");
+          rGrad.addColorStop(1, "#d97706");
+          ctx.strokeStyle = rGrad;
+          ctx.lineWidth = 3.5;
+          ctx.lineCap = "round";
+          ctx.beginPath();
+          ctx.moveTo(-s * 0.8, -s * 0.6);
+          ctx.bezierCurveTo(0, -s * 0.1, -s * 0.4, s * 0.4, s * 0.8, s * 0.7);
+          ctx.stroke();
+        } else {
+          // Sparkling gold foil confetti rectangle (like Image 3)
+          const cGrad = ctx.createLinearGradient(-s, 0, s, 0);
+          cGrad.addColorStop(0, "#f59e0b");
+          cGrad.addColorStop(0.5, "#fef9c3");
+          cGrad.addColorStop(1, "#b45309");
+          ctx.fillStyle = cGrad;
+          ctx.fillRect(-s * 0.55, -s * 0.22, s * 1.1, s * 0.44);
+        }
+
+        ctx.restore();
+      }
+
+      // Launch a firework specifically from the LEFT side or RIGHT side of the screen
+      function launchSideFirework(side) {
+        const w = window.innerWidth;
+        const h = window.innerHeight;
+        const fromLeft = side === "left";
+
+        // Start near left edge or right edge
+        const startX = fromLeft
+          ? 10 + Math.random() * 55
+          : w - 10 - Math.random() * 55;
+        const startY = h - 30 - Math.random() * (h * 0.25);
+
+        // Target explosion zone on left side, right side, or high arch above the card
+        const targetX = fromLeft
+          ? w * 0.12 + Math.random() * (w * 0.28)
+          : w * 0.6 + Math.random() * (w * 0.28);
+        const targetY = h * 0.12 + Math.random() * (h * 0.38);
+
+        const flightTime = 0.68 + Math.random() * 0.25;
+        const vx = (targetX - startX) / flightTime;
+        const gravity = 280;
+        const vy =
+          (targetY - startY - 0.5 * gravity * flightTime * flightTime) /
+          flightTime;
+
+        const palettes = [
+          ["#fef08a", "#facc15", "#f59e0b", "#ffffff"],
+          ["#fda4af", "#f43f5e", "#fbbf24", "#fff1f2"],
+          ["#fde047", "#fb923c", "#ef4444", "#fef9c3"],
+          ["#f9a8d4", "#ec4899", "#fde047", "#ffffff"],
+        ];
+        const colors = palettes[Math.floor(Math.random() * palettes.length)];
+
+        fireworkRockets.push({
+          x: startX,
+          y: startY,
+          vx,
+          vy,
+          gravity,
+          elapsed: 0,
+          flightTime,
+          colors,
+          pan: fromLeft ? -0.65 : 0.65,
+          trail: [],
+        });
+
+        playLaunchSound(fromLeft ? -0.6 : 0.6);
+      }
+
+      function explodeFirework(rocket) {
+        const count = 68 + Math.floor(Math.random() * 35);
+        for (let i = 0; i < count; i++) {
+          const angle =
+            (Math.PI * 2 * i) / count + (Math.random() - 0.5) * 0.15;
+          const speed = 55 + Math.random() * 195;
+          const color =
+            rocket.colors[Math.floor(Math.random() * rocket.colors.length)];
+          fireworkSparks.push({
+            x: rocket.x,
+            y: rocket.y,
+            vx: Math.cos(angle) * speed,
+            vy: Math.sin(angle) * speed,
+            gravity: 165,
+            drag: 0.965,
+            alpha: 1,
+            decay: 0.55 + Math.random() * 0.45,
+            size: 1.8 + Math.random() * 2.4,
+            color,
+            twinkle: Math.random() > 0.35,
+          });
+        }
+        playExplosionSound(rocket.pan, 0.85 + Math.random() * 0.35);
+      }
+
+      function startPart2ContinuousEffects() {
+        resizePart2Canvases();
+        initFallingFlowers();
+        fireworkRockets = [];
+        fireworkSparks = [];
+
+        // Immediately fire an opening celebratory volley from both sides
+        launchSideFirework("left");
+        setTimeout(() => {
+          if (AppState.currentPhase === "INVITATION")
+            launchSideFirework("right");
+        }, 260);
+
+        let lastTime = performance.now();
+        let leftLaunchTimer = 0;
+        let rightLaunchTimer = 0.45;
+
+        function loopPart2(now) {
+          if (AppState.currentPhase !== "INVITATION") return;
+
+          const dt = Math.min((now - lastTime) / 1000, 0.05);
+          lastTime = now;
+
+          const w = window.innerWidth;
+          const h = window.innerHeight;
+
+          // 1. Continuous Dual-Side Firework Spawner
+          leftLaunchTimer += dt;
+          rightLaunchTimer += dt;
+
+          if (leftLaunchTimer >= 1.15 + Math.random() * 0.65) {
+            leftLaunchTimer = 0;
+            launchSideFirework("left");
+          }
+          if (rightLaunchTimer >= 1.15 + Math.random() * 0.65) {
+            rightLaunchTimer = 0;
+            launchSideFirework("right");
+          }
+
+          // 2. Render Fireworks Canvas (60Hz)
+          fwCtx.clearRect(0, 0, w, h);
+
+          // Update & draw rockets
+          for (let i = fireworkRockets.length - 1; i >= 0; i--) {
+            const r = fireworkRockets[i];
+            r.elapsed += dt;
+            r.trail.push({ x: r.x, y: r.y });
+            if (r.trail.length > 8) r.trail.shift();
+
+            r.x += r.vx * dt;
+            r.y += r.vy * dt;
+            r.vy += r.gravity * dt;
+
+            // Draw glowing golden rocket trail
+            fwCtx.beginPath();
+            for (let t = 0; t < r.trail.length; t++) {
+              const pt = r.trail[t];
+              if (t === 0) fwCtx.moveTo(pt.x, pt.y);
+              else fwCtx.lineTo(pt.x, pt.y);
+            }
+            fwCtx.strokeStyle = "rgba(253, 224, 71, 0.75)";
+            fwCtx.lineWidth = 2.5;
+            fwCtx.stroke();
+
+            fwCtx.beginPath();
+            fwCtx.arc(r.x, r.y, 3, 0, Math.PI * 2);
+            fwCtx.fillStyle = "#ffffff";
+            fwCtx.fill();
+
+            if (r.elapsed >= r.flightTime) {
+              explodeFirework(r);
+              fireworkRockets.splice(i, 1);
+            }
+          }
+
+          // Update & draw firework explosion sparks
+          for (let i = fireworkSparks.length - 1; i >= 0; i--) {
+            const sp = fireworkSparks[i];
+            const dragFactor = Math.pow(sp.drag, dt * 60);
+            sp.vx *= dragFactor;
+            sp.vy *= dragFactor;
+            sp.vy += sp.gravity * dt;
+            sp.x += sp.vx * dt;
+            sp.y += sp.vy * dt;
+            sp.alpha -= sp.decay * dt;
+
+            if (sp.alpha <= 0.02) {
+              fireworkSparks.splice(i, 1);
+              continue;
+            }
+
+            const twinkleFactor = sp.twinkle
+              ? 0.55 + 0.45 * Math.sin(now * 0.03 + i)
+              : 1;
+            fwCtx.save();
+            fwCtx.globalAlpha = Math.max(0, sp.alpha * twinkleFactor);
+            fwCtx.fillStyle = sp.color;
+            fwCtx.shadowColor = sp.color;
+            fwCtx.shadowBlur = 8;
+            fwCtx.beginPath();
+            fwCtx.arc(sp.x, sp.y, sp.size, 0, Math.PI * 2);
+            fwCtx.fill();
+            fwCtx.restore();
+          }
+
+          // 3. Render Falling Flowers & Golden Ribbons Canvas (60Hz continuous)
+          petalsCtx.clearRect(0, 0, w, h);
+          for (let i = 0; i < fallingItems.length; i++) {
+            const item = fallingItems[i];
+            item.swayPhase += item.swaySpeed * dt;
+            item.flipPhase += item.flipSpeed * dt;
+            item.angle += item.spinSpeed * dt;
+
+            item.x += (item.vx + Math.sin(item.swayPhase) * item.swayAmp) * dt;
+            item.y += item.vy * dt;
+
+            // Wrap continuously when reaching bottom of viewport
+            if (item.y > h + 45) {
+              item.y = -35;
+              item.x = Math.random() * w;
+            }
+            if (item.x > w + 45) item.x = -35;
+            if (item.x < -45) item.x = w + 35;
+
+            drawFallingFlowerOrRibbon(petalsCtx, item);
+          }
+
+          AppState.part2AnimId = requestAnimationFrame(loopPart2);
+        }
+
+        AppState.part2AnimId = requestAnimationFrame(loopPart2);
+      }
+    </script>
+  </body>
+</html>
