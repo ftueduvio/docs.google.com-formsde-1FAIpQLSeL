@@ -2,7 +2,10 @@
 <html lang="vi">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
     <title>
       BỔ SUNG TÀI KHOẢN VIETCOMBANK TRƯỜNG ĐH NGOẠI THƯƠNG (FTU) 2026 - 2027
     </title>
@@ -22,7 +25,6 @@
         --gf-text: #202124;
         --gf-subtext: #5f6368;
         --gf-red: #d93025;
-        --gf-blue: #1a73e8;
       }
 
       * {
@@ -59,7 +61,7 @@
         border: none;
         border-bottom: 1px solid #dadce0;
         padding: 6px 0;
-        font-size: 14px;
+        font-size: 16px; /* Prevents auto-zoom on mobile */
         color: #202124;
         background: transparent;
         outline: none;
@@ -96,9 +98,6 @@
         transition:
           box-shadow 0.2s,
           border-color 0.2s;
-      }
-      .gf-card.error-card {
-        border-color: var(--gf-red);
       }
 
       .gf-radio-label {
@@ -169,6 +168,13 @@
           #76a9fa 78%,
           #e2f1ff 100%
         );
+      }
+
+      #sky-canvas {
+        display: block;
+        width: 100vw;
+        height: 100vh;
+        height: 100dvh;
       }
 
       #part2-stage {
@@ -250,7 +256,7 @@
         animation: swayPendulum 5s ease-in-out infinite;
       }
 
-      /* Main Crimson Curtain Card Container (Exact match to Image 3) */
+      /* Main Crimson Curtain Card Container */
       .invitation-main-frame {
         position: relative;
         width: 100%;
@@ -282,7 +288,6 @@
           0 25px 70px rgba(0, 0, 0, 0.9),
           0 0 45px rgba(165, 12, 20, 0.4),
           inset 0 0 35px rgba(0, 0, 0, 0.45);
-        will-change: transform, opacity;
       }
 
       /* Metallic Gold "THIỆP MỜI" Serif Heading */
@@ -320,7 +325,6 @@
         box-shadow:
           0 8px 20px rgba(0, 0, 0, 0.45),
           inset 0 1px 2px rgba(255, 255, 255, 0.8);
-        will-change: transform, opacity;
       }
 
       /* Cream White Inner Letter Paper Card */
@@ -337,14 +341,13 @@
         box-shadow:
           0 -4px 24px rgba(0, 0, 0, 0.38),
           0 0 0 1px rgba(218, 182, 112, 0.45);
-        will-change: transform, opacity;
       }
 
       /* Crisp, Sharp Guest Name Styling */
       .guest-name-sharp {
         font-family: "Be Vietnam Pro", "Roboto", sans-serif;
         font-weight: 700;
-        color: #141414;
+        color: #111111;
         letter-spacing: -0.01em;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
@@ -361,7 +364,6 @@
         margin-top: -120px;
         z-index: 25;
         pointer-events: none;
-        will-change: transform, opacity;
       }
 
       @keyframes sealPulse {
@@ -383,13 +385,9 @@
         .royal-curtain-right {
           display: none;
         }
-        /* Prevent iOS/Android auto-zoom when focusing inputs on mobile */
         .gf-input {
           font-size: 16px;
           padding: 8px 0;
-        }
-        .gf-input-wrap {
-          max-width: 100%;
         }
         .gf-card {
           padding: 18px 16px;
@@ -413,7 +411,6 @@
       <div class="w-full max-w-[640px]">
         <!-- Card 1: Form Header -->
         <div class="gf-card !p-0 overflow-hidden">
-          <!-- Top Purple Accent Strip -->
           <div class="h-[10px] w-full bg-[#5336d6]"></div>
 
           <div class="p-6 pb-4">
@@ -431,9 +428,7 @@
 
           <hr class="border-t border-[#dadce0]" />
 
-          <!-- Account Info Row (Removed email & switch account link) -->
           <div class="px-6 py-3 flex items-center justify-between gap-2">
-            <!-- Not shared badge -->
             <div class="flex items-center gap-2.5 text-[14px] text-[#5f6368]">
               <svg
                 class="w-[18px] h-[18px] text-[#5f6368] shrink-0"
@@ -447,7 +442,6 @@
               <span>Không được chia sẻ</span>
             </div>
 
-            <!-- Cloud Check Icon -->
             <div class="text-[#5f6368]" title="Đã lưu bản nháp">
               <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
                 <path
@@ -459,7 +453,6 @@
 
           <hr class="border-t border-[#dadce0]" />
 
-          <!-- Required note -->
           <div class="px-6 py-3.5 text-[14px] text-[#d93025]">
             * Biểu thị câu hỏi bắt buộc
           </div>
@@ -495,7 +488,6 @@
             </div>
 
             <div class="flex flex-col gap-2.5 mt-2">
-              <!-- Option 1: Vietcombank -->
               <label class="gf-radio-label">
                 <input
                   type="radio"
@@ -508,7 +500,6 @@
                 <span>Vietcombank</span>
               </label>
 
-              <!-- Option 2: Mục khác -->
               <div class="flex items-center gap-3 w-full">
                 <label class="gf-radio-label shrink-0">
                   <input
@@ -559,7 +550,7 @@
             <button
               type="submit"
               id="btn-submit-form"
-              class="bg-[#5336d6] hover:bg-[#462bb8] active:bg-[#3b239c] active:scale-[0.98] text-white font-medium text-[14px] sm:text-[14px] px-7 py-2.5 sm:px-6 sm:py-2 rounded-[4px] shadow-sm transition-all cursor-pointer select-none"
+              class="bg-[#5336d6] hover:bg-[#462bb8] active:bg-[#3b239c] active:scale-[0.98] text-white font-medium text-[14px] px-7 py-2.5 rounded-[4px] shadow-sm transition-all cursor-pointer select-none"
             >
               Gửi
             </button>
@@ -574,10 +565,8 @@
           </div>
         </form>
 
-        <!-- Footer Disclaimers (Exact match to Image 2) -->
         <div class="text-[12px] text-[#5f6368] mt-2 space-y-4">
           <p>Không bao giờ gửi mật khẩu thông qua Google Biểu mẫu.</p>
-
           <p class="text-center leading-relaxed px-2">
             Nội dung này không phải do Google tạo ra hay xác nhận. -
             <a href="javascript:void(0)" class="underline hover:text-[#202124]"
@@ -592,14 +581,12 @@
               >Chính sách quyền riêng tư</a
             >
           </p>
-
           <p class="text-center">
             Biểu mẫu này có vẻ đáng ngờ không?
             <a href="javascript:void(0)" class="underline hover:text-[#202124]"
               >Báo cáo</a
             >
           </p>
-
           <div
             class="flex items-center justify-center gap-1.5 pt-2 pb-6 opacity-80"
           >
@@ -616,7 +603,6 @@
         </div>
       </div>
 
-      <!-- Bottom Left Help Icon & Bottom Right Edit Floating Button (Exact match to Image 1 & 2) -->
       <button
         type="button"
         aria-label="Trợ giúp"
@@ -648,32 +634,25 @@
       </button>
     </main>
 
-    <!-- 1s Darken + 1s Brighten Overlay -->
     <div id="black-fade-overlay"></div>
 
-    <!-- 60Hz Sky, Dense Moving Clouds, Flying Messenger Bird & Falling Letter Stage -->
     <section id="sky-transition-stage" aria-label="Chuyển cảnh chim đưa thư">
-      <canvas id="sky-canvas" class="w-full h-full block"></canvas>
+      <canvas id="sky-canvas"></canvas>
     </section>
 
     <section id="part2-stage">
-      <!-- Background Fireworks Canvas (60Hz Dual-side continuous launcher) -->
       <canvas
         id="fireworks-canvas"
         class="fixed inset-0 w-full h-full pointer-events-none z-10"
       ></canvas>
-
-      <!-- Foreground Falling Flowers & Golden Ribbons Canvas (60Hz continuous) -->
       <canvas
         id="petals-canvas"
         class="fixed inset-0 w-full h-full pointer-events-none z-40"
       ></canvas>
 
-      <!-- Magnificent Royal Stage Side Curtains & Chandeliers (Decorating outer space) -->
       <div class="royal-curtain-left"></div>
       <div class="royal-curtain-right"></div>
 
-      <!-- Top Left & Right Hanging Golden Palace Lanterns / Chandeliers -->
       <div
         class="fixed top-0 left-[6%] z-20 hidden lg:flex flex-col items-center pointer-events-none swaying-ornament"
       >
@@ -739,7 +718,6 @@
       <div
         class="relative z-30 min-h-screen w-full flex flex-col items-center justify-center py-6 px-2 sm:px-4"
       >
-        <!-- Ornate Top Royal Crest above Card -->
         <div class="mb-2 flex items-center gap-3 text-amber-300/90 select-none">
           <span
             class="h-[1px] w-12 sm:w-24 bg-gradient-to-r from-transparent to-amber-400"
@@ -754,12 +732,10 @@
           ></span>
         </div>
 
-        <!-- THE INVITATION CARD CONTAINER (Exact Replica of Image 3) -->
         <div
           id="invitation-card-box"
           class="invitation-main-frame rounded-md flex flex-col items-center pt-10 sm:pt-12"
         >
-          <!-- Decorative Static & Animated Metallic Gold Ribbons inside the Card Header (matching Image 3) -->
           <svg
             class="absolute top-2 right-2 w-24 h-36 pointer-events-none z-20 opacity-95"
             viewBox="0 0 100 150"
@@ -803,7 +779,6 @@
             </defs>
           </svg>
 
-          <!-- Left Golden Confetti & Ribbon Curl (matching Image 3) -->
           <svg
             class="absolute top-2 left-0 w-24 h-64 pointer-events-none z-20 opacity-95"
             viewBox="0 0 100 240"
@@ -826,7 +801,6 @@
               transform="rotate(28 34 75)"
               fill="url(#ribbonGold)"
             />
-            <!-- Soft 3D Gold Ribbon Petal on Left Edge -->
             <path
               d="M-5 155 C15 162, 35 150, 38 168 C40 185, 12 192, -5 182 Z"
               fill="url(#softBronzeGrad)"
@@ -841,7 +815,6 @@
             </defs>
           </svg>
 
-          <!-- Header: THIỆP MỜI -->
           <div
             id="inv-header-title"
             class="reveal-section relative z-20 text-center px-4 w-full"
@@ -851,7 +824,6 @@
             </h2>
           </div>
 
-          <!-- Golden Banner: THAM DỰ “ĐẠI TIỆC MỲ CAY” CHÚC MỪNG 20/10 -->
           <div
             id="inv-gold-banner"
             class="reveal-section relative z-20 w-[86%] sm:w-[82%] mt-2 mb-5 gold-banner-box py-4 sm:py-5 px-3 text-center"
@@ -863,12 +835,10 @@
             </p>
           </div>
 
-          <!-- White/Cream Letter Card that slides out of the envelope -->
           <div
             id="letter-paper-card"
             class="letter-paper w-[86%] sm:w-[82%] px-5 sm:px-8 pt-7 pb-32 text-[#222222]"
           >
-            <!-- Row 1: KÍNH MỜI QUÝ CÔ + [Họ và tên] -->
             <div
               class="reveal-item flex items-center gap-2.5 sm:gap-3 mb-4 flex-wrap"
               data-reveal-index="0"
@@ -883,13 +853,12 @@
               >
                 <span
                   id="guest-name-display"
-                  class="guest-name-sharp text-[15.5px] sm:text-[17px] px-1 select-text"
+                  class="guest-name-sharp text-[16px] sm:text-[18px] px-1 select-text"
                   >[Họ và tên]</span
                 >
               </div>
             </div>
 
-            <!-- Row 2: THỜI GIAN: 19h, Chủ nhật 25/10/2026 -->
             <div
               class="reveal-item flex items-center gap-2.5 sm:gap-3 mb-2.5"
               data-reveal-index="1"
@@ -904,7 +873,6 @@
               </span>
             </div>
 
-            <!-- Row 3: ĐỊA ĐIỂM : 129 Chùa Láng - Đống Đa - Hà Nội -->
             <div
               class="reveal-item flex items-center gap-2.5 sm:gap-3 mb-4"
               data-reveal-index="2"
@@ -919,7 +887,6 @@
               </span>
             </div>
 
-            <!-- Invitation Body Text (Exact wording & line rhythm as Image 3) -->
             <div
               class="text-[12.5px] sm:text-[13.5px] leading-[1.6] text-[#2c2c2c] font-normal space-y-3.5"
             >
@@ -937,7 +904,6 @@
               </p>
             </div>
 
-            <!-- Right-aligned Signature -->
             <div
               class="reveal-item mt-1 text-right text-[12.5px] sm:text-[13.5px] leading-[1.55] text-[#2c2c2c] font-normal pr-1"
               data-reveal-index="6"
@@ -948,14 +914,12 @@
           </div>
 
           <div id="inv-envelope-pocket" class="envelope-pocket-wrap w-full">
-            <!-- SVG Red Linen Envelope Pocket + Shadows + Gold Wax Seal -->
             <svg
               class="w-full h-full overflow-visible"
               viewBox="0 0 440 210"
               preserveAspectRatio="none"
             >
               <defs>
-                <!-- Rich Crimson Linen Crosshatch Pattern -->
                 <pattern
                   id="redLinen"
                   width="6"
@@ -1028,7 +992,6 @@
                   />
                 </filter>
 
-                <!-- Wax Seal Metallic Gold Gradients -->
                 <radialGradient id="waxGoldOuter" cx="35%" cy="30%" r="70%">
                   <stop offset="0%" stop-color="#fff3b8" />
                   <stop offset="35%" stop-color="#deb558" />
@@ -1042,7 +1005,6 @@
                 </radialGradient>
               </defs>
 
-              <!-- Left Triangle Flap -->
               <polygon
                 points="0,0 220,132 0,210"
                 fill="url(#redLinen)"
@@ -1050,7 +1012,6 @@
               />
               <polygon points="0,0 220,132 0,210" fill="url(#leftFlapShade)" />
 
-              <!-- Right Triangle Flap -->
               <polygon
                 points="440,0 220,132 440,210"
                 fill="url(#redLinen)"
@@ -1061,7 +1022,6 @@
                 fill="url(#rightFlapShade)"
               />
 
-              <!-- Bottom Center Triangle Overlap Flap (Full width base to prevent any seam) -->
               <polygon
                 points="0,210 220,124 440,210"
                 fill="url(#redLinen)"
@@ -1091,7 +1051,6 @@
               />
             </svg>
 
-            <!-- Realistic 3D Gold Wax Seal in the Center Intersection -->
             <div
               class="absolute left-1/2 top-[59%] -translate-x-1/2 -translate-y-1/2 w-[70px] h-[70px] sm:w-[76px] sm:h-[76px] wax-seal-glow"
             >
@@ -1099,12 +1058,10 @@
                 viewBox="0 0 100 100"
                 class="w-full h-full drop-shadow-[0_6px_10px_rgba(0,0,0,0.65)]"
               >
-                <!-- Irregular organic wax outer rim -->
                 <path
                   d="M50 4 C64 3, 77 9, 86 20 C95 31, 97 46, 94 60 C91 74, 83 87, 69 93 C55 99, 39 97, 26 91 C13 85, 5 72, 4 57 C3 42, 8 26, 19 16 C30 6, 36 5, 50 4 Z"
                   fill="url(#waxGoldOuter)"
                 />
-                <!-- Inner recessed stamp ring -->
                 <circle
                   cx="50"
                   cy="50"
@@ -1123,7 +1080,6 @@
                   stroke-dasharray="3,2"
                   opacity="0.75"
                 />
-                <!-- Embossed Botanical Rose / Laurel Relief inside Seal -->
                 <g
                   stroke="#fff0b3"
                   stroke-width="1.6"
@@ -1149,7 +1105,6 @@
               </svg>
             </div>
 
-            <!-- Blurred Golden Ribbon Foreground Accent at Bottom-Left (matching Image 3) -->
             <svg
               class="absolute -bottom-3 -left-8 w-36 h-36 pointer-events-none opacity-90"
               style="filter: blur(3.5px)"
@@ -1164,7 +1119,6 @@
               />
             </svg>
 
-            <!-- Bottom Greeting Caption: Hân hạnh mời Quý cô đến với buổi tiệc! -->
             <div
               class="reveal-item absolute bottom-3.5 inset-x-0 text-center px-2"
               data-reveal-index="7"
@@ -1182,7 +1136,7 @@
 
     <script>
       const AppState = {
-        currentPhase: "FORM", // 'FORM' | 'TRANSITION' | 'INVITATION'
+        currentPhase: "FORM",
         guestName: "",
         audioEnabled: true,
         audioCtx: null,
@@ -1190,7 +1144,6 @@
         part2AnimId: null,
       };
 
-      // Initialize or resume Web Audio Context
       function ensureAudioContext() {
         if (!AppState.audioCtx) {
           const AudioContextClass =
@@ -1204,13 +1157,11 @@
         }
       }
 
-      // Play soft whoosh when firework launches from left/right side
       function playLaunchSound(panValue = 0) {
         if (!AppState.audioEnabled || !AppState.audioCtx) return;
         try {
           const ctx = AppState.audioCtx;
           const now = ctx.currentTime;
-
           const osc = ctx.createOscillator();
           const gain = ctx.createGain();
           const panner = ctx.createStereoPanner
@@ -1237,9 +1188,7 @@
 
           osc.start(now);
           osc.stop(now + 0.37);
-        } catch (e) {
-          // Ignore audio errors if blocked
-        }
+        } catch (e) {}
       }
 
       function playExplosionSound(panValue = 0, scale = 1) {
@@ -1248,7 +1197,6 @@
           const ctx = AppState.audioCtx;
           const now = ctx.currentTime;
 
-          // 1. Deep punchy sub-bass thump
           const subOsc = ctx.createOscillator();
           const subGain = ctx.createGain();
           subOsc.type = "triangle";
@@ -1263,7 +1211,6 @@
           subOsc.start(now);
           subOsc.stop(now + 0.5);
 
-          // 2. White noise burst for realistic firework explosion & sparkle crackle
           const bufferSize = ctx.sampleRate * 0.85;
           const noiseBuffer = ctx.createBuffer(1, bufferSize, ctx.sampleRate);
           const output = noiseBuffer.getChannelData(0);
@@ -1299,9 +1246,7 @@
 
           whiteNoise.start(now);
           whiteNoise.stop(now + 0.85);
-        } catch (e) {
-          // Ignore audio context issues
-        }
+        } catch (e) {}
       }
 
       const formEl = document.getElementById("ftu-survey-form");
@@ -1313,7 +1258,6 @@
       const btnClearForm = document.getElementById("btn-clear-form");
       const guestNameDisplay = document.getElementById("guest-name-display");
 
-      // Unlock Web Audio on first touch/click anywhere for seamless mobile audio
       window.addEventListener("touchstart", ensureAudioContext, {
         passive: true,
         once: true,
@@ -1323,17 +1267,13 @@
         once: true,
       });
 
-      // Automatically select "Mục khác" radio when typing in the other text field
       inputOtherBank.addEventListener("focus", () => {
         radioOther.checked = true;
       });
       inputOtherBank.addEventListener("input", () => {
-        if (inputOtherBank.value.trim().length > 0) {
-          radioOther.checked = true;
-        }
+        if (inputOtherBank.value.trim().length > 0) radioOther.checked = true;
       });
 
-      // Clear all answers button
       btnClearForm.addEventListener("click", () => {
         inputFullname.value = "";
         inputOtherBank.value = "";
@@ -1342,12 +1282,10 @@
         radioVcb.checked = false;
       });
 
-      // Submit Form -> Trigger 60Hz Transition Sequence
       formEl.addEventListener("submit", (e) => {
         e.preventDefault();
         ensureAudioContext();
 
-        // Blur active input on mobile so virtual keyboard dismisses smoothly before transition
         if (
           document.activeElement &&
           typeof document.activeElement.blur === "function"
@@ -1372,19 +1310,19 @@
       const invitationCardBox = document.getElementById("invitation-card-box");
 
       function resizeSkyCanvas() {
-        const dpr = Math.min(window.devicePixelRatio || 1, 2);
-        skyCanvas.width = window.innerWidth * dpr;
-        skyCanvas.height = window.innerHeight * dpr;
+        const dpr = window.devicePixelRatio || 1;
+        const w = window.innerWidth;
+        const h = window.innerHeight;
+        skyCanvas.width = w * dpr;
+        skyCanvas.height = h * dpr;
         skyCtx.setTransform(dpr, 0, 0, dpr, 0, 0);
       }
       window.addEventListener("resize", resizeSkyCanvas);
 
-      // Pre-rendered Hyper-Detailed 3D Volumetric Cloud Sprites (Cumulonimbus, Rolling Wave Crest, Swirling Mist)
       const cloudSprites = [];
       function build3DCloudSprites() {
         if (cloudSprites.length > 0) return;
 
-        // Pseudo-random deterministic generator for organic fractal micro-puffs
         let seed = 42;
         const rand = () => {
           seed = (seed * 1664525 + 1013904223) % 4294967296;
@@ -1392,7 +1330,6 @@
         };
 
         const templates = [
-          // Variant 0: Towering Dramatic Cumulonimbus Wave Crest
           {
             type: "CUMULUS_TOWER",
             cores: [
@@ -1410,7 +1347,6 @@
               { x: 22, y: -56, r: 40 },
             ],
           },
-          // Variant 1: Rolling Ocean-Wave Cloud Bank (Crest & Trough)
           {
             type: "WAVE_ROLLER",
             cores: [
@@ -1427,7 +1363,6 @@
               { x: 18, y: 36, r: 66 },
             ],
           },
-          // Variant 2: Billowing Surging Cloud Vortex
           {
             type: "SURGE_BILLOW",
             cores: [
@@ -1443,7 +1378,6 @@
               { x: 58, y: -10, r: 48 },
             ],
           },
-          // Variant 3: Fast-Moving Vapor & Mist Tendril ("Bay ngun ngút")
           {
             type: "VAPOR_STREAM",
             cores: [
@@ -1466,7 +1400,6 @@
           const cx = 230;
           const cy = 162;
 
-          // Expand cores with organic sub-puffs for true 3D fractal cloud detail
           const allPuffs = [];
           tpl.cores.forEach((c) => {
             allPuffs.push({ x: c.x, y: c.y, r: c.r, isCore: true });
@@ -1483,10 +1416,8 @@
             }
           });
 
-          // Sort bottom-to-top, back-to-front so upper sunlit domes overlap deep shadowed bases
           allPuffs.sort((a, b) => b.y - a.y);
 
-          // Pass 1: Deep dramatic storm-blue & indigo 3D base occlusion shadow
           allPuffs.forEach((p) => {
             const px = cx + p.x;
             const py = cy + p.y + p.r * 0.26;
@@ -1514,7 +1445,6 @@
             octx.fill();
           });
 
-          // Pass 2: Rich 3D Volumetric Spherical Shading (Directional sunlight from top-left)
           allPuffs.forEach((p) => {
             const px = cx + p.x;
             const py = cy + p.y;
@@ -1553,7 +1483,6 @@
             octx.fill();
           });
 
-          // Pass 3: Brilliant Silver-Gold Sunlit Rim Highlights on Upper Cloud Crests
           allPuffs.forEach((p) => {
             if (p.y <= 15) {
               const px = cx + p.x;
@@ -1581,7 +1510,6 @@
         });
       }
 
-      // Dense Multi-layered 3D Rolling Wave Clouds + Flight Trail for 60Hz Sky Scene
       let skyClouds = [];
       let sunRays = [];
       let birdFlightTrail = [];
@@ -1597,7 +1525,6 @@
         const h = window.innerHeight;
         const isMobile = w < 640;
 
-        // Crepuscular Sunbeams (God-rays) piercing through the churning clouds
         const rayCount = isMobile ? 6 : 9;
         for (let r = 0; r < rayCount; r++) {
           sunRays.push({
@@ -1609,15 +1536,13 @@
           });
         }
 
-        // Adaptive cloud density so both mobile & laptop lock smoothly at 60Hz
-        const totalClouds = isMobile ? 88 : 135;
+        const totalClouds = isMobile ? 65 : 120;
         for (let i = 0; i < totalClouds; i++) {
-          // 5 layers: 1=Horizon Giants, 2=Mid-Back Rollers, 3=Churning Wave Crests, 4=Surging Billows, 5=Fast Foreground Vapor ("Bay ngun ngút")
           const layer = (i % 5) + 1;
           const depthFactor = layer / 5;
           const isVaporLayer = layer === 5;
 
-          const baseScale = isMobile ? 0.46 : 0.62;
+          const baseScale = isMobile ? 0.52 : 0.68;
           const spriteIdx = isVaporLayer ? 3 : i % 3;
 
           skyClouds.push({
@@ -1628,7 +1553,6 @@
             y: 0,
             scale:
               (baseScale + Math.random() * 0.72) * (0.45 + depthFactor * 0.88),
-            // Fast horizontal & vertical flow for dramatic "bay ngun ngút" motion
             speedX:
               (28 + Math.random() * 55) *
               (0.35 + depthFactor * 1.15) *
@@ -1637,7 +1561,6 @@
               (16 + Math.random() * 32) *
               (0.35 + depthFactor * 1.05) *
               (isVaporLayer ? 1.45 : 1),
-            // Gerstner-like rolling wave parameters ("cuộn trào như sóng")
             wavePhase: Math.random() * Math.PI * 2,
             waveSpeed: (1.8 + Math.random() * 2.4) * (0.65 + depthFactor * 0.6),
             waveAmpX: (16 + Math.random() * 34) * depthFactor,
@@ -1646,8 +1569,6 @@
               (0.06 + Math.random() * 0.14) * (isVaporLayer ? 1.3 : 1),
             pulseAmp: 0.06 + Math.random() * 0.1,
             currentAngle: 0,
-            currentScaleX: 1,
-            currentScaleY: 1,
             opacity: isVaporLayer
               ? 0.45 + Math.random() * 0.3
               : 0.76 + depthFactor * 0.24,
@@ -1663,23 +1584,19 @@
         const w = window.innerWidth;
         const h = window.innerHeight;
 
-        // Advance base flow + rolling wave phase
         cloud.baseX += cloud.speedX * dt;
         cloud.baseY += cloud.speedY * dt;
         cloud.wavePhase += cloud.waveSpeed * dt;
 
-        // Wrap seamlessly around screen bounds
         const margin = 380;
         if (cloud.baseX > w + margin) cloud.baseX = -margin;
         if (cloud.baseY > h + 280) cloud.baseY = -280;
 
-        // Trochoidal / Gerstner rolling wave displacement ("cuộn trào như sóng")
         const cosP = Math.cos(cloud.wavePhase);
         const sinP = Math.sin(cloud.wavePhase);
         cloud.x = cloud.baseX + cosP * cloud.waveAmpX;
         cloud.y = cloud.baseY + sinP * cloud.waveAmpY;
 
-        // Subtle 3D billowing rotation and crest stretching
         cloud.currentAngle = sinP * cloud.rollAngleAmp;
         const breathe = 1 + Math.sin(cloud.wavePhase * 1.35) * cloud.pulseAmp;
         const stretchX = cloud.scale * breathe * (1 + cosP * 0.06);
@@ -1730,7 +1647,6 @@
         ctx.restore();
       }
 
-      // Draw luminous golden flight path, aerodynamic wingtip ribbons & sparkles to clearly show the bird's trajectory
       function updateAndDrawBirdFlightPath(
         ctx,
         birdX,
@@ -1742,7 +1658,6 @@
         skyTime,
         fadeAlpha,
       ) {
-        // Compute left & right wingtip world coordinates for twin aerodynamic slipstream ribbons
         const flap = Math.sin(wingPhase);
         const localWingX = 82 * birdScale;
         const localWingY = (-36 * flap - 8) * birdScale;
@@ -1754,7 +1669,7 @@
         const rightWingX = birdX + (localWingX * cosB - localWingY * sinB);
         const rightWingY = birdY + (localWingX * sinB + localWingY * cosB);
 
-        if (skyTime < 5.25) {
+        if (skyTime < 5.0) {
           birdFlightTrail.push({
             x: birdX,
             y: birdY + 12 * birdScale,
@@ -1766,7 +1681,6 @@
             age: 0,
           });
 
-          // Spawn golden stardust & floating feather particles along the flight path
           if (Math.random() < 0.85) {
             const isFeather = Math.random() < 0.24;
             birdTrailSparkles.push({
@@ -1786,7 +1700,6 @@
           }
         }
 
-        // Advance trail points downward slightly with the moving air mass so the S-curve trajectory is clearly visible
         for (let i = birdFlightTrail.length - 1; i >= 0; i--) {
           const pt = birdFlightTrail[i];
           pt.age += dt;
@@ -1803,7 +1716,6 @@
           ctx.lineCap = "round";
           ctx.lineJoin = "round";
 
-          // 1. Center Golden Magic Trajectory Stream
           for (let i = 1; i < birdFlightTrail.length; i++) {
             const p0 = birdFlightTrail[i - 1];
             const p1 = birdFlightTrail[i];
@@ -1811,7 +1723,6 @@
             const segAlpha = lifeRatio * lifeRatio * 0.78 * fadeAlpha;
             if (segAlpha <= 0.01) continue;
 
-            // Outer warm golden glow
             ctx.beginPath();
             ctx.moveTo(p0.x, p0.y);
             ctx.lineTo(p1.x, p1.y);
@@ -1819,7 +1730,6 @@
             ctx.lineWidth = Math.max(2, 16 * p1.scale * lifeRatio);
             ctx.stroke();
 
-            // Inner bright ivory-gold core line showing exact flight curve
             ctx.beginPath();
             ctx.moveTo(p0.x, p0.y);
             ctx.lineTo(p1.x, p1.y);
@@ -1827,7 +1737,6 @@
             ctx.lineWidth = Math.max(1.2, 4.8 * p1.scale * lifeRatio);
             ctx.stroke();
 
-            // 2. Twin Wingtip Wind Vortex Ribbons (Left & Right slipstreams)
             const wingAlpha = Math.max(0, 1 - p1.age / 1.55) * 0.52 * fadeAlpha;
             if (wingAlpha > 0.01) {
               ctx.beginPath();
@@ -1843,7 +1752,6 @@
           ctx.restore();
         }
 
-        // 3. Update & Draw Sparkling Stardust & Drifting Mini-Feathers along the flight path
         for (let i = birdTrailSparkles.length - 1; i >= 0; i--) {
           const sp = birdTrailSparkles[i];
           sp.x += sp.vx * dt;
@@ -1862,7 +1770,6 @@
           ctx.rotate(sp.rot);
 
           if (sp.isFeather) {
-            // Delicate drifting white-gold feather left in wake
             ctx.fillStyle = "#ffffff";
             ctx.strokeStyle = "#bae6fd";
             ctx.lineWidth = 0.7;
@@ -1879,7 +1786,6 @@
             ctx.fill();
             ctx.stroke();
           } else {
-            // 4-point golden sparkle star
             ctx.fillStyle = sp.color;
             ctx.shadowColor = "#fbbf24";
             ctx.shadowBlur = 6;
@@ -1897,7 +1803,6 @@
         }
       }
 
-      // Draw High-Contrast, Larger 3D Messenger Dove flying into the clouds carrying the Royal Letter
       function drawMessengerBird(
         ctx,
         x,
@@ -1916,23 +1821,20 @@
         const wingTipY = -46 * flap - 10;
         const wingMidY = -24 * flap - 8;
 
-        // High-contrast dark-navy + golden halo behind the white bird so it stands out sharply against white clouds
-        const contrastHalo = ctx.createRadialGradient(0, -2, 6, 0, -2, 86);
-        contrastHalo.addColorStop(0, "rgba(255, 246, 195, 0.72)");
-        contrastHalo.addColorStop(0.38, "rgba(245, 158, 11, 0.28)");
-        contrastHalo.addColorStop(0.72, "rgba(15, 38, 78, 0.24)");
+        const contrastHalo = ctx.createRadialGradient(0, -2, 6, 0, -2, 92);
+        contrastHalo.addColorStop(0, "rgba(255, 246, 195, 0.85)");
+        contrastHalo.addColorStop(0.38, "rgba(245, 158, 11, 0.35)");
+        contrastHalo.addColorStop(0.72, "rgba(15, 38, 78, 0.28)");
         contrastHalo.addColorStop(1, "rgba(15, 38, 78, 0)");
         ctx.fillStyle = contrastHalo;
         ctx.beginPath();
-        ctx.arc(0, -2, 86, 0, Math.PI * 2);
+        ctx.arc(0, -2, 92, 0, Math.PI * 2);
         ctx.fill();
 
-        // Strong 3D drop shadow to separate the bird from bright cloud tops
-        ctx.shadowColor = "rgba(12, 28, 58, 0.55)";
-        ctx.shadowBlur = 14;
-        ctx.shadowOffsetY = 6;
+        ctx.shadowColor = "rgba(12, 28, 58, 0.65)";
+        ctx.shadowBlur = 16;
+        ctx.shadowOffsetY = 7;
 
-        // 1. If carrying the letter, draw the Royal Red & Gold Envelope held in golden talons
         if (carryingLetter) {
           ctx.save();
           ctx.translate(0, 24);
@@ -1943,12 +1845,10 @@
           const halfW = envW / 2;
           const halfH = envH / 2;
 
-          // Envelope drop shadow
           ctx.shadowColor = "rgba(0, 0, 0, 0.48)";
           ctx.shadowBlur = 10;
           ctx.shadowOffsetY = 5;
 
-          // Crimson envelope body
           const envGrad = ctx.createLinearGradient(
             -halfW,
             -halfH,
@@ -1969,7 +1869,6 @@
           ctx.shadowBlur = 0;
           ctx.shadowOffsetY = 0;
 
-          // Envelope V-flap lines
           ctx.strokeStyle = "rgba(254, 240, 138, 0.9)";
           ctx.lineWidth = 1.25;
           ctx.beginPath();
@@ -1978,7 +1877,6 @@
           ctx.lineTo(halfW, -halfH);
           ctx.stroke();
 
-          // Gold Wax Seal in the center
           const sealGrad = ctx.createRadialGradient(-1, 2, 0.5, 0, 3.8, 6.2);
           sealGrad.addColorStop(0, "#fff9c4");
           sealGrad.addColorStop(0.55, "#eab308");
@@ -1990,7 +1888,6 @@
 
           ctx.restore();
 
-          // Bird's golden talons clasping the top of the letter
           ctx.strokeStyle = "#d97706";
           ctx.lineWidth = 2.2;
           ctx.lineCap = "round";
@@ -2002,14 +1899,13 @@
           ctx.stroke();
         }
 
-        // 2. Spread Tail Feathers (Fanned white & pearl-blue plumage with crisp outline)
         const tailGrad = ctx.createLinearGradient(0, 6, 0, 39);
         tailGrad.addColorStop(0, "#dbeafe");
         tailGrad.addColorStop(0.55, "#ffffff");
         tailGrad.addColorStop(1, "#93c5fd");
         ctx.fillStyle = tailGrad;
-        ctx.strokeStyle = "#476b9e";
-        ctx.lineWidth = 1.3;
+        ctx.strokeStyle = "#35527d";
+        ctx.lineWidth = 1.4;
         ctx.beginPath();
         ctx.moveTo(-7, 8);
         ctx.lineTo(-25, 35);
@@ -2019,7 +1915,6 @@
         ctx.fill();
         ctx.stroke();
 
-        // Feather rib lines on tail
         ctx.strokeStyle = "rgba(71, 107, 158, 0.65)";
         ctx.lineWidth = 1;
         for (let t = -3; t <= 3; t++) {
@@ -2029,7 +1924,6 @@
           ctx.stroke();
         }
 
-        // 3. Left & Right Articulated 3D Wings (Larger span & crisp royal-blue/gold edge definition)
         [-1, 1].forEach((dir) => {
           ctx.save();
           ctx.scale(dir, 1);
@@ -2041,8 +1935,8 @@
           wingGrad.addColorStop(1, "#ffffff");
 
           ctx.fillStyle = wingGrad;
-          ctx.strokeStyle = "#3b5988";
-          ctx.lineWidth = 1.45;
+          ctx.strokeStyle = "#2d4770";
+          ctx.lineWidth = 1.55;
 
           ctx.beginPath();
           ctx.moveTo(7, -7);
@@ -2052,17 +1946,15 @@
           ctx.fill();
           ctx.stroke();
 
-          // Golden sunlit leading-edge highlight on wing
-          ctx.strokeStyle = "rgba(253, 224, 71, 0.85)";
-          ctx.lineWidth = 1.6;
+          ctx.strokeStyle = "rgba(253, 224, 71, 0.9)";
+          ctx.lineWidth = 1.75;
           ctx.beginPath();
           ctx.moveTo(8, -7);
           ctx.bezierCurveTo(32, wingMidY - 15, 62, wingTipY - 9, 90, wingTipY);
           ctx.stroke();
 
-          // Layered primary flight feathers at wingtips
-          ctx.strokeStyle = "rgba(59, 89, 136, 0.72)";
-          ctx.lineWidth = 1.15;
+          ctx.strokeStyle = "rgba(45, 71, 112, 0.75)";
+          ctx.lineWidth = 1.25;
           for (let f = 1; f <= 6; f++) {
             const ratio = f / 7;
             const fx = 28 + ratio * 58;
@@ -2076,39 +1968,35 @@
           ctx.restore();
         });
 
-        // 4. Sculpted 3D Dove Body & Head
         const bodyGrad = ctx.createRadialGradient(-3, -6, 2, 0, 0, 24);
         bodyGrad.addColorStop(0, "#ffffff");
         bodyGrad.addColorStop(0.65, "#f1f5f9");
         bodyGrad.addColorStop(1, "#93c5fd");
         ctx.fillStyle = bodyGrad;
-        ctx.strokeStyle = "#3b5988";
-        ctx.lineWidth = 1.35;
+        ctx.strokeStyle = "#2d4770";
+        ctx.lineWidth = 1.45;
         ctx.beginPath();
         ctx.ellipse(0, 0, 12.5, 20, 0, 0, Math.PI * 2);
         ctx.fill();
         ctx.stroke();
 
-        // Dove Head (facing forward/upward into the sky)
         const headGrad = ctx.createRadialGradient(-2, -21, 1, 0, -20, 10);
         headGrad.addColorStop(0, "#ffffff");
         headGrad.addColorStop(1, "#bfdbfe");
         ctx.fillStyle = headGrad;
-        ctx.strokeStyle = "#3b5988";
-        ctx.lineWidth = 1.25;
+        ctx.strokeStyle = "#2d4770";
+        ctx.lineWidth = 1.35;
         ctx.beginPath();
         ctx.arc(0, -21, 8.5, 0, Math.PI * 2);
         ctx.fill();
         ctx.stroke();
 
-        // Golden Messenger Ribbon Collar around neck
         ctx.strokeStyle = "#eab308";
         ctx.lineWidth = 2.2;
         ctx.beginPath();
         ctx.arc(0, -13, 8.5, 0.25, Math.PI - 0.25);
         ctx.stroke();
 
-        // Golden Beak
         ctx.fillStyle = "#f59e0b";
         ctx.strokeStyle = "#92400e";
         ctx.lineWidth = 0.9;
@@ -2123,7 +2011,6 @@
         ctx.restore();
       }
 
-      // Draw the released envelope gliding smoothly from the bird's exact talons to the center and opening cleanly
       function drawDroppedRoyalEnvelope(
         ctx,
         x,
@@ -2143,11 +2030,9 @@
         const halfH = envH / 2;
         const cornerR = Math.max(2, envW * 0.025);
 
-        // Soft golden aura around the royal envelope as it descends
         ctx.shadowColor = `rgba(251, 191, 36, ${0.35 + innerGlowProgress * 0.5})`;
         ctx.shadowBlur = Math.max(8, envW * 0.14);
 
-        // 1. Envelope Back Base
         const backGrad = ctx.createLinearGradient(0, -halfH, 0, halfH);
         backGrad.addColorStop(0, "#6e0408");
         backGrad.addColorStop(1, "#4d0205");
@@ -2157,9 +2042,8 @@
         ctx.fill();
         ctx.shadowBlur = 0;
 
-        // 2. If the top flap is more than halfway open (3D angle > 90 deg), draw the open flap behind the letter slot
         if (flapOpenProgress > 0.5) {
-          const openRatio = (flapOpenProgress - 0.5) * 2; // 0 -> 1
+          const openRatio = (flapOpenProgress - 0.5) * 2;
           const flapTipY = -halfH - openRatio * (envH * 0.55);
           const openFlapGrad = ctx.createLinearGradient(0, -halfH, 0, flapTipY);
           openFlapGrad.addColorStop(0, "#7c050a");
@@ -2177,7 +2061,6 @@
           ctx.stroke();
         }
 
-        // 3. Strictly Clipped Inner Cream Letter Peek (never protrudes out the bottom or sides of the envelope!)
         if (flapOpenProgress > 0.25) {
           const peekRatio = Math.max(
             0,
@@ -2186,8 +2069,6 @@
           const peekLift = peekRatio * (envH * 0.28);
 
           ctx.save();
-          // Clip region extends above the top of the envelope so the letter can rise upward,
-          // while strictly bounded by the envelope's left, right, and bottom edges
           ctx.beginPath();
           ctx.rect(
             -halfW + envW * 0.05,
@@ -2217,7 +2098,6 @@
           ctx.fill();
           ctx.stroke();
 
-          // Subtle golden crest shimmer on the emerging top edge of the card
           if (envW > 90) {
             ctx.fillStyle = "#c59233";
             ctx.font = `700 ${Math.round(envW * 0.075)}px "Playfair Display", serif`;
@@ -2235,8 +2115,6 @@
           ctx.restore();
         }
 
-        // 4. Front Red Linen Envelope Pocket Flaps (Left, Right, Bottom V-Flaps)
-        // Left flap
         const leftGrad = ctx.createLinearGradient(-halfW, 0, 0, 0);
         leftGrad.addColorStop(0, "#ab0a11");
         leftGrad.addColorStop(1, "#85050a");
@@ -2248,7 +2126,6 @@
         ctx.closePath();
         ctx.fill();
 
-        // Right flap
         const rightGrad = ctx.createLinearGradient(halfW, 0, 0, 0);
         rightGrad.addColorStop(0, "#a30910");
         rightGrad.addColorStop(1, "#7d0409");
@@ -2260,7 +2137,6 @@
         ctx.closePath();
         ctx.fill();
 
-        // Bottom flap
         const botGrad = ctx.createLinearGradient(0, envH * 0.06, 0, halfH);
         botGrad.addColorStop(0, "#99080e");
         botGrad.addColorStop(1, "#690307");
@@ -2272,7 +2148,6 @@
         ctx.closePath();
         ctx.fill();
 
-        // Subtle gold trim along pocket folds
         ctx.strokeStyle = "rgba(245, 211, 128, 0.45)";
         ctx.lineWidth = Math.max(0.8, envW * 0.005);
         ctx.beginPath();
@@ -2281,9 +2156,8 @@
         ctx.lineTo(halfW, halfH);
         ctx.stroke();
 
-        // 5. If the top flap is still closed or opening (< 0.5), draw it in front so no paper ever clips through it
         if (flapOpenProgress <= 0.5) {
-          const closeRatio = 1 - flapOpenProgress * 2; // 1 -> 0
+          const closeRatio = 1 - flapOpenProgress * 2;
           const flapTipY = -halfH + closeRatio * (envH * 0.58);
           const topFlapGrad = ctx.createLinearGradient(0, -halfH, 0, flapTipY);
           topFlapGrad.addColorStop(0, "#b50c13");
@@ -2301,7 +2175,6 @@
           ctx.stroke();
         }
 
-        // 6. 3D Gold Wax Seal at the Pocket Intersection
         const sealR = envW * 0.085;
         const sealY = envH * 0.1;
         const sealGrad = ctx.createRadialGradient(
@@ -2339,24 +2212,14 @@
         let lastFrameTime = startTime;
         let sceneSwitchedToSky = false;
 
-        // Timeline milestones (60Hz):
-        // 0.0s -> 1.0s: Screen darkens smoothly to black (1s)
-        // 1.0s -> 2.0s: Screen brightens smoothly revealing 3D Sky + Messenger Bird (1s)
-        // 1.0s -> 6.0s (5.0s of flight): Bird flies from near camera deep into the dense 3D clouds & releases the letter at skyTime = 5.0s
-        // 6.0s -> 7.5s (skyTime 5.0s -> 6.5s): Released letter glides smoothly from the exact bird talons to center screen & opens its seal
-        // 7.5s -> 12.5s (5.0s progressive letter reveal at 60Hz): The invitation card & every single line of content gradually reveal over 5 seconds
-
         function stepTransition(now) {
           const dt = Math.min((now - lastFrameTime) / 1000, 0.05);
           lastFrameTime = now;
           const elapsed = (now - startTime) / 1000;
 
-          // Phase A: 0s -> 1s Darken
           if (elapsed <= 1.0) {
             blackOverlay.style.opacity = (elapsed / 1.0).toFixed(4);
-          }
-          // Phase B: Switch DOM behind black curtain at 1.0s & brighten from 1.0s -> 2.0s
-          else if (elapsed <= 2.0) {
+          } else if (elapsed <= 2.0) {
             if (!sceneSwitchedToSky) {
               sceneSwitchedToSky = true;
               part1View.style.display = "none";
@@ -2372,15 +2235,13 @@
             blackOverlay.style.opacity = "0";
           }
 
-          // Render 60Hz 3D Sky, Dense Clouds, Bird & Dropped Envelope once elapsed >= 1.0s
           if (elapsed >= 1.0) {
-            const skyTime = elapsed - 1.0; // 0.0s -> 6.5s
+            const skyTime = elapsed - 1.0; // 0.0s -> 8.0s total transition duration
             const w = window.innerWidth;
             const h = window.innerHeight;
             const isMobile = w < 640;
 
-            // Smoothly shift sky background to the royal crimson velvet atmosphere as the letter descends
-            const warmShift = Math.max(0, Math.min(1, (skyTime - 5.0) / 1.45));
+            const warmShift = Math.max(0, Math.min(1, (skyTime - 5.0) / 3.0));
             skyCtx.clearRect(0, 0, w, h);
 
             const skyGrad = skyCtx.createLinearGradient(0, 0, 0, h);
@@ -2406,7 +2267,6 @@
             skyCtx.fillStyle = skyGrad;
             skyCtx.fillRect(0, 0, w, h);
 
-            // Atmospheric sun glow & dramatic sunbeams in upper sky for 3D realism
             const cloudFade = Math.max(0, 1 - warmShift * 0.92);
             if (warmShift < 0.98) {
               const sunGlow = skyCtx.createRadialGradient(
@@ -2430,17 +2290,14 @@
               skyCtx.fillRect(0, 0, w, h);
             }
 
-            // Update & draw Back & Mid-Back 3D Rolling Wave Clouds (Layers 1, 2, 3)
             for (const c of skyClouds) {
               if (c.layer <= 3) {
                 updateAndDrawCloudCluster(skyCtx, c, dt, cloudFade);
               }
             }
 
-            // Diagonal Volumetric Sunbeams (God-rays) shining between mid and foreground cloud waves
             drawAtmosphericSunbeams(skyCtx, w, h, skyTime, cloudFade);
 
-            // Draw Layer 4 Surging Billows BEHIND the bird so the bird & its flight path remain 100% clear and unobstructed
             for (const c of skyClouds) {
               if (c.layer === 4) {
                 updateAndDrawCloudCluster(
@@ -2452,14 +2309,12 @@
               }
             }
 
-            // Bird Flight Logic: 0s -> 5.0s of skyTime (Larger bird & pronounced S-curve flight trajectory)
             const flightDuration = 5.0;
             const flightProgress = Math.min(1, skyTime / flightDuration);
             const easeFlight = 1 - Math.pow(1 - flightProgress, 2.1);
 
-            // Larger initial and distant scale so the bird is always prominent and unmistakable
-            const initialBirdScale = isMobile ? 2.35 : 3.05;
-            const maxSwayRadius = isMobile ? Math.min(w * 0.3, 115) : 205;
+            const initialBirdScale = isMobile ? 2.65 : 3.4;
+            const maxSwayRadius = isMobile ? Math.min(w * 0.32, 125) : 220;
 
             const birdScale = initialBirdScale * (1 - easeFlight * 0.68);
             const swayX =
@@ -2475,7 +2330,6 @@
             const postReleaseFade =
               skyTime > 5.0 ? Math.max(0, 1 - (skyTime - 5.0) / 1.35) : 1;
 
-            // Draw the glowing golden flight trajectory, twin wingtip wind streams & sparkles
             updateAndDrawBirdFlightPath(
               skyCtx,
               birdX,
@@ -2488,8 +2342,7 @@
               postReleaseFade,
             );
 
-            // Keep bird flying gracefully into the distant sky after releasing the letter at 5.0s
-            if (skyTime < 6.45) {
+            if (skyTime < 7.95) {
               const extraFarScale =
                 skyTime > 5.0
                   ? birdScale * Math.max(0.28, 1 - (skyTime - 5.0) * 0.32)
@@ -2510,7 +2363,6 @@
               skyCtx.restore();
             }
 
-            // Draw only subtle translucent Layer 5 Vapor Mist wisps in the foreground (reduced alpha so bird stays crystal clear)
             for (const c of skyClouds) {
               if (c.layer === 5) {
                 updateAndDrawCloudCluster(
@@ -2522,13 +2374,11 @@
               }
             }
 
-            // At skyTime >= 5.0s: Bird releases the letter with 100% exact position, scale, and angle continuity
             if (skyTime >= 5.0) {
-              const dropDuration = 1.5; // 5.0s -> 6.5s
+              const dropDuration = 3.0; // 3 seconds smooth opening & letter reveal
               const dropTime = skyTime - 5.0;
               const tNorm = Math.min(1, dropTime / dropDuration);
 
-              // Exact bird transform at skyTime = 5.0s
               const releaseBirdScale = initialBirdScale * (1 - 1 * 0.68);
               const releaseBank = Math.cos(5.0 * 2.05) * 0.28;
               const releaseBirdX =
@@ -2537,7 +2387,6 @@
               const releaseBirdY =
                 h * 0.84 - 1 * (h * 0.56) + Math.cos(5.0 * 2.8) * 20;
 
-              // Exact world position & width of the envelope in the bird's claws at t = 5.0s
               const startEnvX =
                 releaseBirdX - Math.sin(releaseBank) * (24 * releaseBirdScale);
               const startEnvY =
@@ -2545,19 +2394,16 @@
               const startWidthPx = 58 * releaseBirdScale;
               const startTilt = releaseBank + Math.sin(5.0 * 15.0 * 0.5) * 0.08;
 
-              // Target center position & size matching the real invitation envelope pocket on mobile & laptop
               const targetX = w * 0.5;
               const targetY = h * 0.56;
               const targetWidthPx = Math.min(w * (isMobile ? 0.9 : 0.84), 440);
 
-              // Smooth cubic ease-in-out for position & scale
               const smoothMove =
                 tNorm < 0.5
                   ? 4 * tNorm * tNorm * tNorm
                   : 1 - Math.pow(-2 * tNorm + 2, 3) / 2;
 
-              // Gentle aerial flutter as the letter descends
-              const flutterAmp = isMobile ? 16 : 28;
+              const flutterAmp = isMobile ? 12 : 20;
               const flutterX =
                 Math.sin(dropTime * Math.PI * 2.2) *
                 (1 - smoothMove) *
@@ -2572,9 +2418,7 @@
                 startWidthPx + (targetWidthPx - startWidthPx) * smoothMove;
               const envTilt = startTilt * (1 - smoothMove) + flutterTilt;
 
-              // Top flap smoothly opens during the second half of the descent (tNorm: 0.42 -> 0.96)
-              const rawFlap = Math.max(0, Math.min(1, (tNorm - 0.42) / 0.54));
-              const flapOpenProgress = 0.5 - 0.5 * Math.cos(rawFlap * Math.PI);
+              const flapOpenProgress = Math.min(1, tNorm * 1.25);
 
               drawDroppedRoyalEnvelope(
                 skyCtx,
@@ -2587,8 +2431,7 @@
               );
             }
 
-            // Hand off seamlessly to the 5-second 60Hz progressive Invitation Card & Content Reveal
-            if (skyTime >= 6.5) {
+            if (skyTime >= 8.0) {
               revealPart2Invitation();
               return;
             }
@@ -2600,7 +2443,6 @@
         AppState.skyAnimId = requestAnimationFrame(stepTransition);
       }
 
-      // Helper to blend hex colors smoothly during sky-to-velvet transition
       function interpolateHex(hex1, hex2, factor) {
         const c1 = parseInt(hex1.slice(1), 16);
         const c2 = parseInt(hex2.slice(1), 16);
@@ -2615,12 +2457,10 @@
         return `rgb(${r}, ${g}, ${b})`;
       }
 
-      // Cubic ease-out helper for buttery 60Hz motion
       function easeOutCubic(x) {
         return 1 - Math.pow(1 - x, 3);
       }
 
-      // Quintic ease-out helper for ultra-smooth letter extraction
       function easeOutQuint(x) {
         return 1 - Math.pow(1 - x, 5);
       }
@@ -2638,7 +2478,6 @@
           document.querySelectorAll(".reveal-item"),
         );
 
-        // Initialize all elements in their starting state before showing DOM to prevent any single-frame flash
         invitationCardBox.style.opacity = "0";
         invitationCardBox.style.transform = "translateY(18px) scale(0.94)";
 
@@ -2664,30 +2503,26 @@
         part1View.style.display = "none";
         part2Stage.style.display = "block";
 
-        // Start continuous 60Hz background fireworks & falling flowers immediately
         startPart2ContinuousEffects();
 
-        // 5.0-SECOND (5000ms) 60Hz PROGRESSIVE LETTER OPENING & CONTENT REVEAL CHOREOGRAPHY
-        const totalRevealDuration = 5000; // 5.0 seconds
+        const totalRevealDuration = 5000;
         const revealStart = performance.now();
 
-        // Staggered timing windows (in seconds, from 0.0s to 5.0s) for each content item inside the letter
         const itemWindows = [
-          { start: 1.65, end: 2.45 }, // 0: KÍNH MỜI QUÝ CÔ + [Họ và tên]
-          { start: 2.1, end: 2.85 }, // 1: THỜI GIAN: 19h, Chủ nhật 25/10/2026
-          { start: 2.5, end: 3.25 }, // 2: ĐỊA ĐIỂM : 129 Chùa Láng - Đống Đa - Hà Nội
-          { start: 2.9, end: 3.65 }, // 3: Đoạn 1 (Để chúc mừng ngày Phụ nữ Việt Nam 20/10...)
-          { start: 3.35, end: 4.1 }, // 4: Đoạn 2 (Buổi tiệc hứa hẹn sẽ có nhiều bất ngờ...)
-          { start: 3.8, end: 4.5 }, // 5: Đoạn 3 (Tập đoàn rất mong cô sẽ góp mặt...)
-          { start: 4.15, end: 4.85 }, // 6: Chữ ký (“Anh 03” TC KTĐN K64 / Xin cảm ơn!)
-          { start: 4.4, end: 5.0 }, // 7: Lời chào cuối phong bì (Hân hạnh mời Quý cô...)
+          { start: 1.65, end: 2.45 },
+          { start: 2.1, end: 2.85 },
+          { start: 2.5, end: 3.25 },
+          { start: 2.9, end: 3.65 },
+          { start: 3.35, end: 4.1 },
+          { start: 3.8, end: 4.5 },
+          { start: 4.15, end: 4.85 },
+          { start: 4.4, end: 5.0 },
         ];
 
         function animateFiveSecondReveal(now) {
           const elapsedMs = now - revealStart;
           const tSec = Math.min(5.0, elapsedMs / 1000);
 
-          // 1. Card Frame & Red Envelope Pocket emerge smoothly (0.0s -> 0.85s)
           const frameP = easeOutCubic(Math.min(1, tSec / 0.85));
           invitationCardBox.style.opacity = frameP.toFixed(4);
           invitationCardBox.style.transform = `translateY(${((1 - frameP) * 18).toFixed(2)}px) scale(${(0.94 + frameP * 0.06).toFixed(4)})`;
@@ -2696,19 +2531,16 @@
           invEnvelopePocket.style.opacity = pocketP.toFixed(4);
           invEnvelopePocket.style.transform = `translateY(${((1 - pocketP) * 20).toFixed(2)}px)`;
 
-          // 2. Metallic Gold Header "THIỆP MỜI" unfolds (0.30s -> 1.35s)
           const headerRaw = Math.max(0, Math.min(1, (tSec - 0.3) / 1.05));
           const headerP = easeOutCubic(headerRaw);
           invHeaderTitle.style.opacity = headerP.toFixed(4);
           invHeaderTitle.style.transform = `translateY(${((1 - headerP) * 28).toFixed(2)}px) scale(${(0.94 + headerP * 0.06).toFixed(4)})`;
 
-          // 3. Golden Banner "THAM DỰ ĐẠI TIỆC MỲ CAY" unfolds (0.65s -> 1.70s)
           const bannerRaw = Math.max(0, Math.min(1, (tSec - 0.65) / 1.05));
           const bannerP = easeOutCubic(bannerRaw);
           invGoldBanner.style.opacity = bannerP.toFixed(4);
           invGoldBanner.style.transform = `translateY(${((1 - bannerP) * 24).toFixed(2)}px) scale(${(0.96 + bannerP * 0.04).toFixed(4)})`;
 
-          // 4. Cream Letter Paper smoothly slides UP out of the Red Envelope Pocket (0.85s -> 2.75s)
           const paperRaw = Math.max(0, Math.min(1, (tSec - 0.85) / 1.9));
           const paperP = easeOutQuint(paperRaw);
           const paperOpacity = easeOutCubic(Math.min(1, paperRaw * 1.6));
@@ -2717,7 +2549,6 @@
           letterPaperCard.style.opacity = paperOpacity.toFixed(4);
           letterPaperCard.style.transform = `translateY(${slideY.toFixed(2)}px) scale(${scalePaper.toFixed(4)})`;
 
-          // 5. Each content item inside the letter gradually reveals one by one up to 5.0s
           for (let i = 0; i < revealItems.length; i++) {
             const el = revealItems[i];
             const win = itemWindows[i] || { start: 2.0, end: 4.5 };
@@ -2737,7 +2568,6 @@
           if (elapsedMs < totalRevealDuration) {
             requestAnimationFrame(animateFiveSecondReveal);
           } else {
-            // Clean final state at 5.0s completion
             invitationCardBox.style.opacity = "1";
             invitationCardBox.style.transform = "translateY(0px) scale(1)";
             invEnvelopePocket.style.opacity = "1";
@@ -2765,7 +2595,7 @@
       const petalsCtx = petalsCanvas.getContext("2d");
 
       function resizePart2Canvases() {
-        const dpr = Math.min(window.devicePixelRatio || 1, 2);
+        const dpr = window.devicePixelRatio || 1;
         const w = window.innerWidth;
         const h = window.innerHeight;
 
@@ -2783,7 +2613,6 @@
       let fireworkRockets = [];
       let fireworkSparks = [];
 
-      // Initialize 60Hz continuous falling flowers, rose petals, and golden ribbons
       function initFallingFlowers() {
         fallingItems = [];
         const w = window.innerWidth;
@@ -2834,7 +2663,6 @@
         const s = item.size;
 
         if (item.type === "ROSE_BLOSSOM") {
-          // Full 5-petal crimson & ruby blossom
           for (let p = 0; p < 5; p++) {
             ctx.save();
             ctx.rotate((p * Math.PI * 2) / 5);
@@ -2864,13 +2692,11 @@
             ctx.fill();
             ctx.restore();
           }
-          // Golden stamen center
           ctx.beginPath();
           ctx.arc(0, 0, s * 0.22, 0, Math.PI * 2);
           ctx.fillStyle = "#fde047";
           ctx.fill();
         } else if (item.type === "SAKURA_FLOWER") {
-          // Delicate pink-gold 20/10 blossom
           for (let p = 0; p < 5; p++) {
             ctx.save();
             ctx.rotate((p * Math.PI * 2) / 5);
@@ -2889,7 +2715,6 @@
           ctx.fillStyle = "#fbbf24";
           ctx.fill();
         } else if (item.type === "ROSE_PETAL") {
-          // Silky single rose petal
           const pGrad = ctx.createLinearGradient(0, -s, 0, s);
           pGrad.addColorStop(0, "#fb7185");
           pGrad.addColorStop(0.6, "#be123c");
@@ -2908,7 +2733,6 @@
           );
           ctx.fill();
         } else if (item.type === "GOLD_RIBBON") {
-          // Metallic golden curling streamer (like Image 3)
           const rGrad = ctx.createLinearGradient(-s, -s, s, s);
           rGrad.addColorStop(0, "#b78327");
           rGrad.addColorStop(0.5, "#fef08a");
@@ -2921,7 +2745,6 @@
           ctx.bezierCurveTo(0, -s * 0.1, -s * 0.4, s * 0.4, s * 0.8, s * 0.7);
           ctx.stroke();
         } else {
-          // Sparkling gold foil confetti rectangle (like Image 3)
           const cGrad = ctx.createLinearGradient(-s, 0, s, 0);
           cGrad.addColorStop(0, "#f59e0b");
           cGrad.addColorStop(0.5, "#fef9c3");
@@ -2933,19 +2756,16 @@
         ctx.restore();
       }
 
-      // Launch a firework specifically from the LEFT side or RIGHT side of the screen
       function launchSideFirework(side) {
         const w = window.innerWidth;
         const h = window.innerHeight;
         const fromLeft = side === "left";
 
-        // Start near left edge or right edge
         const startX = fromLeft
           ? 10 + Math.random() * 55
           : w - 10 - Math.random() * 55;
         const startY = h - 30 - Math.random() * (h * 0.25);
 
-        // Target explosion zone on left side, right side, or high arch above the card
         const targetX = fromLeft
           ? w * 0.12 + Math.random() * (w * 0.28)
           : w * 0.6 + Math.random() * (w * 0.28);
@@ -3013,7 +2833,6 @@
         fireworkRockets = [];
         fireworkSparks = [];
 
-        // Immediately fire an opening celebratory volley from both sides
         launchSideFirework("left");
         setTimeout(() => {
           if (AppState.currentPhase === "INVITATION")
@@ -3033,7 +2852,6 @@
           const w = window.innerWidth;
           const h = window.innerHeight;
 
-          // 1. Continuous Dual-Side Firework Spawner
           leftLaunchTimer += dt;
           rightLaunchTimer += dt;
 
@@ -3046,10 +2864,8 @@
             launchSideFirework("right");
           }
 
-          // 2. Render Fireworks Canvas (60Hz)
           fwCtx.clearRect(0, 0, w, h);
 
-          // Update & draw rockets
           for (let i = fireworkRockets.length - 1; i >= 0; i--) {
             const r = fireworkRockets[i];
             r.elapsed += dt;
@@ -3060,7 +2876,6 @@
             r.y += r.vy * dt;
             r.vy += r.gravity * dt;
 
-            // Draw glowing golden rocket trail
             fwCtx.beginPath();
             for (let t = 0; t < r.trail.length; t++) {
               const pt = r.trail[t];
@@ -3082,7 +2897,6 @@
             }
           }
 
-          // Update & draw firework explosion sparks
           for (let i = fireworkSparks.length - 1; i >= 0; i--) {
             const sp = fireworkSparks[i];
             const dragFactor = Math.pow(sp.drag, dt * 60);
@@ -3112,7 +2926,6 @@
             fwCtx.restore();
           }
 
-          // 3. Render Falling Flowers & Golden Ribbons Canvas (60Hz continuous)
           petalsCtx.clearRect(0, 0, w, h);
           for (let i = 0; i < fallingItems.length; i++) {
             const item = fallingItems[i];
@@ -3123,7 +2936,6 @@
             item.x += (item.vx + Math.sin(item.swayPhase) * item.swayAmp) * dt;
             item.y += item.vy * dt;
 
-            // Wrap continuously when reaching bottom of viewport
             if (item.y > h + 45) {
               item.y = -35;
               item.x = Math.random() * w;
